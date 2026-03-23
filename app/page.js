@@ -7,6 +7,7 @@ import { TypingAnimation } from '@/components/ui/typing-animation';
 import { DotPattern } from '@/components/ui/dot-pattern';
 import { LightRays } from '@/components/ui/light-rays';
 import { useState } from 'react';
+import { Particles } from '@/components/ui/particles';
 
 export default function Home() {
   const [hovered, setHovered] = useState(null);

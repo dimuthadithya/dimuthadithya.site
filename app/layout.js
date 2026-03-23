@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono, Arimo } from 'next/font/google';
 import './globals.css';
 import CustomCursor from '@/components/CustomCursor';
+import { Particles } from '@/components/ui/particles';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -27,6 +28,13 @@ export default function RootLayout({ children }) {
     <html lang='en' className={`${arimo.className} h-full antialiased`}>
       <body className='min-h-full flex flex-col bg-neutral-950 overflow-x-hidden'>
         <CustomCursor />
+        <Particles
+          className='absolute inset-0 -z-10'
+          quantity={100}
+          size={0.8}
+          color='#00c853'
+          refresh
+        />
         {children}
       </body>
     </html>
