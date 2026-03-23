@@ -10,18 +10,19 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import { HyperText } from './ui/hyper-text';
+import { InteractiveHoverButton } from './ui/interactive-hover-button';
 
 export function NavigationMenuDemo() {
   const words = ['web developer', 'problem solver', 'designer', 'creator'];
 
   return (
     <div className='flex items-center'>
-      <NavigationMenu className='bg-black text-white px-6 py-4'>
-        <NavigationMenuList className='gap-6'>
-          <NavigationMenuItem>
+      <NavigationMenu className=' text-white px-6 py-4'>
+        <NavigationMenuList className='gap-6 '>
+          <NavigationMenuItem className={''}>
             <NavigationMenuLink
               asChild
-              className={navigationMenuTriggerStyle()}
+              className={navigationMenuTriggerStyle() + ' bg-transparent'}
             >
               <Link href='/'>Home</Link>
             </NavigationMenuLink>
@@ -30,7 +31,7 @@ export function NavigationMenuDemo() {
           <NavigationMenuItem>
             <NavigationMenuLink
               asChild
-              className={navigationMenuTriggerStyle()}
+              className={navigationMenuTriggerStyle() + ' bg-transparent'}
             >
               <Link href='/about'>About</Link>
             </NavigationMenuLink>
@@ -39,7 +40,7 @@ export function NavigationMenuDemo() {
           <NavigationMenuItem>
             <NavigationMenuLink
               asChild
-              className={navigationMenuTriggerStyle()}
+              className={navigationMenuTriggerStyle() + ' bg-transparent'}
             >
               <Link href='/projects'>Projects</Link>
             </NavigationMenuLink>
@@ -48,7 +49,7 @@ export function NavigationMenuDemo() {
           <NavigationMenuItem>
             <NavigationMenuLink
               asChild
-              className={navigationMenuTriggerStyle()}
+              className={navigationMenuTriggerStyle() + ' bg-transparent'}
             >
               <Link href='/contact'>Contact</Link>
             </NavigationMenuLink>
@@ -56,7 +57,9 @@ export function NavigationMenuDemo() {
         </NavigationMenuList>
       </NavigationMenu>
       <div className='flex-1 justify-end flex items-end me-20 text-sm text-neutral-300 hover:text-neutral-100 transition-colors duration-75'>
-        <HyperText className={'text-sm'}>Web Developer</HyperText>
+        <InteractiveHoverButton className={'text-black'}>
+          Hire Me
+        </InteractiveHoverButton>
       </div>
     </div>
   );
