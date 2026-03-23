@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className=' text-white h-screen flex flex-col select-none'>
       <div className='flex-1'></div>
-      <div className='h-7/8 bg-neutral-950 px-20 flex flex-col items-start justify-center gap-10'>
+      <div className='h-7/8 px-20 flex flex-col items-start justify-center gap-10'>
         <div>
           <EncryptedText
             text='dimuth'
