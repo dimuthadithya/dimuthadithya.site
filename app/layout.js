@@ -1,6 +1,7 @@
 import { Arimo } from 'next/font/google';
 import './globals.css';
 import CustomCursor from '@/components/CustomCursor';
+import { StripedPattern } from '@/components/magicui/striped-pattern';
 
 const arimo = Arimo({
   variable: '--font-arimo',
@@ -15,9 +16,20 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en' className={`${arimo.className} h-full antialiased`}>
-      <body className='min-h-full flex flex-col bg-neutral-950 overflow-x-hidden'>
+      <body className='min-h-full flex flex-col overflow-x-hidden'>
         <CustomCursor />
-        {children}
+        <StripedPattern
+          className={'bg-neutral-50 text-neutral-400'}
+          width={5}
+        />
+        <div className='z-11 gap-5 flex h-screen'>
+          <div className='border-2 w-1/12 bg-neutral-100 '></div>
+          <div className='flex-1 h-screen bg-neutral-100 border-2  mx-auto'>
+            <div className='bg-neutral-50 py-10 border-b-2'></div>
+            <div className='p-20'>{children}</div>
+          </div>
+          <div className='border-2 w-1/12 bg-neutral-100 h-screen'></div>
+        </div>
       </body>
     </html>
   );
