@@ -9,6 +9,7 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
+import { HyperText } from './ui/hyper-text';
 
 export function NavigationMenuDemo() {
   const words = ['web developer', 'problem solver', 'designer', 'creator'];
@@ -55,7 +56,7 @@ export function NavigationMenuDemo() {
         </NavigationMenuList>
       </NavigationMenu>
       <div className='flex-1 justify-end flex items-end me-20 text-sm text-neutral-300 hover:text-neutral-100 transition-colors duration-75'>
-        Web Devloper
+        <HyperText className={'text-sm'}>Web Developer</HyperText>
       </div>
     </div>
   );
