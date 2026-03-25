@@ -1,5 +1,6 @@
 'use client';
 
+import { NumberTicker } from '@/components/ui/number-ticker';
 import { TextAnimate } from '@/components/ui/text-animate';
 import * as motion from 'motion/react-client';
 import { useState } from 'react';
@@ -10,7 +11,7 @@ export default function Home() {
     <>
       <div className={`bg-neutral-950 min-h-screen`}>
         <motion.div
-          className={`font-inconsolata  gap-2 items-center justify-center ${isLoading ? 'flex' : 'hidden'} h-screen tracking-tight select-none`}
+          className={`font-inconsolata  gap-2 items-center justify-center ${isLoading ? 'flex' : 'hidden'} h-screen tracking-tight select-none relative`}
           initial={{ y: '0vh' }}
           animate={{ y: '-100vh' }}
           transition={{ duration: 1, delay: 3, ease: [0.25, 1, 0.5, 1] }}
@@ -68,6 +69,19 @@ export default function Home() {
               </motion.div>
             </motion.div>
           </div>
+          <motion.div
+            className='absolute text-white bottom-5 right-5'
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 0 }}
+            delay={9}
+            transition={{ duration: 6, ease: [0.25, 1, 0.5, 1] }}
+          >
+            <NumberTicker
+              value={100}
+              className={`text-4xl font-medium tracking-tighter whitespace-pre-wrap text-white ${isLoading ? '' : 'hidden'}`}
+            />
+            <span>%</span>
+          </motion.div>
         </motion.div>
         {!isLoading && (
           <motion.div
