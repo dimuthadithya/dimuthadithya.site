@@ -10,6 +10,8 @@ import { TracingBeam } from '@/components/ui/tracing-beam';
 import { ArrowDownIcon, ArrowDownLeft } from '@phosphor-icons/react';
 import { WordRotate } from '@/components/ui/word-rotate';
 import { ShinyButton } from '@/components/ui/shiny-button';
+import { CoolMode } from '@/components/ui/cool-mode';
+import { Button } from '@/components/ui/button';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -92,11 +94,18 @@ export default function Home() {
         {!isLoading && (
           <TracingBeam>
             <motion.div
-              className='flex flex-col text-white font-playfair-display px-20 py-10 select-none max-w-5xl mx-auto '
+              className='flex flex-col text-white font-playfair-display px-20 py-10 select-none max-w-5xl mx-auto relative'
               initial={{ y: '100vh', opacity: 0 }}
               animate={{ y: '0vh', opacity: 1 }}
               transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
             >
+              <div className='fixed justify-center right-10 bottom-5 font-inconsolata'>
+                <CoolMode>
+                  <Button className={'rounded-full h-5 w-5 bg-transparent'}>
+                    DA
+                  </Button>
+                </CoolMode>
+              </div>
               <div className='h-[94vh] flex flex-col'>
                 <div className='mb-20'>
                   <Navigation />
