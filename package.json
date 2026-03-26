@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@phosphor-icons/react": "^2.1.10",
     "@radix-ui/react-hover-card": "^1.1.15",
     "class-variance-authority": "^0.7.1",
