@@ -7,7 +7,9 @@ import { useState } from 'react';
 import { AvatarCircles } from '@/components/ui/avatar-circles';
 import Navigation from '@/components/Navigation';
 import { TracingBeam } from '@/components/ui/tracing-beam';
-import { ArrowDownLeft } from '@phosphor-icons/react';
+import { ArrowDownIcon, ArrowDownLeft } from '@phosphor-icons/react';
+import { WordRotate } from '@/components/ui/word-rotate';
+import { ShinyButton } from '@/components/ui/shiny-button';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -131,7 +133,27 @@ export default function Home() {
                       <span className='text-neutral-400'> impact.</span>
                     </h1>
                   </div>
-                  <div>hello</div>
+                  <div className='lg:h-30 text-3xl'>
+                    <div className='text-neutral-400 hover:text-neutral-50 transition-colors duration-100 flex items-center'>
+                      I build products that are
+                      <span className='text-white ms-2'>
+                        <WordRotate
+                          words={[
+                            'scalable.',
+                            'user-focused.',
+                            'high-performance.',
+                            'impactful.',
+                          ]}
+                        />
+                      </span>
+                    </div>
+                    <ShinyButton className={'bg-neutral-900 mt-4'}>
+                      <div className='flex items-center gap-1'>
+                        <span>Resume</span>
+                        <ArrowDownIcon />
+                      </div>
+                    </ShinyButton>
+                  </div>
                   <div className='capitalize font-inconsolata flex justify-end items-center mt-10 text-sm opacity-80 hover:opacity-100 transition-opacity hover:text-green-400 duration-200 cursor-pointer mb-2'>
                     <span className='me-1'>see selected works</span>
                     <ArrowDownLeft />
