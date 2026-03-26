@@ -2,7 +2,7 @@ import {
   Geist,
   Geist_Mono,
   Inconsolata,
-  Playfair_Display,
+  Noto_Sans_Pahawh_Hmong,
 } from 'next/font/google';
 import './globals.css';
 
@@ -22,9 +22,10 @@ const inconsolata = Inconsolata({
   weight: '400',
 });
 
-const playFairDisplay = Playfair_Display({
-  variable: '--font-playfair-display',
+const nanoSansPahwhHmong = Noto_Sans_Pahawh_Hmong({
+  variable: '--font-nano-sans',
   subsets: ['latin'],
+  weight: '400',
 });
 
 export const metadata = {
@@ -36,7 +37,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang='en'
-      className={`${geistSans.variable} ${geistMono.variable} ${inconsolata.variable} ${playFairDisplay.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${inconsolata.variable} ${nanoSansPahwhHmong.variable} h-full antialiased`}
     >
       <body className='min-h-full flex flex-col'>{children}</body>
     </html>

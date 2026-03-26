@@ -6,7 +6,6 @@ import * as motion from 'motion/react-client';
 import { useState } from 'react';
 import { AvatarCircles } from '@/components/ui/avatar-circles';
 import Navigation from '@/components/Navigation';
-import { Highlighter } from '@/components/ui/highlighter';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -93,7 +92,7 @@ export default function Home() {
             animate={{ y: '0vh', opacity: 1 }}
             transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
           >
-            <div className='h-screen flex flex-col max-w-7xl mx-auto'>
+            <div className='h-screen flex flex-col max-w-5xl mx-auto'>
               <div className='mb-20'>
                 <Navigation />
               </div>
@@ -107,12 +106,13 @@ export default function Home() {
                     },
                   ]}
                 />
-                <h1 className='text-5xl -tracking-normal leading-15'>
+                <h1 className='tracking-tight'>
                   <TextAnimate
                     animation='blurInUp'
                     by='character'
                     once={true}
                     duration={1}
+                    className={'mb-3 text-5xl'}
                   >
                     Hey, I&apos;m Dimuth.
                   </TextAnimate>
@@ -121,6 +121,7 @@ export default function Home() {
                     by='word'
                     once={true}
                     delay={1.3}
+                    className={'text-4xl'}
                   >
                     I specialize in building modern web applications, taking
                     products from zero to one. Over the past 3+ years, I&apos;ve
