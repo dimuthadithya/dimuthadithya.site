@@ -1,0 +1,88 @@
+'use client';
+
+import * as motion from 'motion/react-client';
+import { NumberTicker } from '@/components/ui/number-ticker';
+import { TextAnimate } from '@/components/ui/text-animate';
+
+/**
+ * Full-screen loading / intro animation shown before the main content.
+ * Slides up and calls `onComplete` when the animation finishes.
+ *
+ * @param {boolean}  isLoading  – controls visibility
+ * @param {Function} onComplete – called when the exit animation ends
+ */
+export default function LoadingScreen({ isLoading, onComplete }) {
+  return (
+    <motion.div
+      className={`font-inconsolata gap-2 items-center justify-center ${
+        isLoading ? 'flex' : 'hidden'
+      } h-screen tracking-tight select-none relative`}
+      initial={{ y: '0vh' }}
+      animate={{ y: '-100vh' }}
+      transition={{ duration: 1, delay: 3, ease: [0.25, 1, 0.5, 1] }}
+      onAnimationComplete={onComplete}
+    >
+      {/* Name */}
+      <div className='max-h-50 overflow-hidden'>
+        <motion.div
+          initial={{ y: 40, opacity: 0, scale: 0.96, filter: 'blur(8px)' }}
+          animate={{ y: 0, opacity: 1, scale: 1, filter: 'blur(0px)' }}
+          transition={{ duration: 1, delay: 0.3, ease: [0.25, 1, 0.5, 1] }}
+        >
+          <motion.div
+            initial={{ y: 0, opacity: 1 }}
+            animate={{ y: -100, opacity: 0 }}
+            transition={{ duration: 1, delay: 2.5, ease: [0.25, 1, 0.5, 1] }}
+          >
+            <TextAnimate
+              animation='slideLeft'
+              by='character'
+              className='text-red-600 text-4xl font-bold uppercase'
+            >
+              Dimuth
+            </TextAnimate>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Sub-label */}
+      <div className='max-h-50 overflow-hidden'>
+        <motion.div
+          className='tracking-tighter flex flex-col text-sm font-extralight justify-center opacity-80 ease-in-out w-20 text-red-700 transition-opacity duration-200 hover:opacity-100'
+          initial={{ y: 40, opacity: 0, filter: 'blur(6px)' }}
+          animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
+          transition={{ duration: 1, delay: 0.8, ease: [0.25, 1, 0.5, 1] }}
+        >
+          <motion.div
+            initial={{ y: 0 }}
+            animate={{ y: 100 }}
+            transition={{ duration: 1, delay: 2.7, ease: [0.25, 1, 0.5, 1] }}
+            className='flex flex-col'
+          >
+            <span>Portfolio</span>
+            <span className='-mt-1'>
+              <span className='me-1'>©</span>
+              2026
+            </span>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Percentage counter */}
+      <motion.div
+        className='absolute text-white bottom-5 right-5'
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 0 }}
+        transition={{ duration: 6, ease: [0.25, 1, 0.5, 1] }}
+      >
+        <NumberTicker
+          value={100}
+          className={`text-4xl font-medium tracking-tighter whitespace-pre-wrap text-white ${
+            isLoading ? '' : 'hidden'
+          }`}
+        />
+        <span>%</span>
+      </motion.div>
+    </motion.div>
+  );
+}
