@@ -7,13 +7,19 @@ import { useState } from 'react';
 import { AvatarCircles } from '@/components/ui/avatar-circles';
 import Navigation from '@/components/Navigation';
 import { TracingBeam } from '@/components/ui/tracing-beam';
-import { ArrowDown, ArrowDownIcon, ArrowDownLeft } from '@phosphor-icons/react';
+import {
+  ArrowDown,
+  ArrowDownIcon,
+  ArrowDownLeft,
+  ArrowRight,
+} from '@phosphor-icons/react';
 import { WordRotate } from '@/components/ui/word-rotate';
 import { ShinyButton } from '@/components/ui/shiny-button';
 import { CoolMode } from '@/components/ui/cool-mode';
 import { Button } from '@/components/ui/button';
 import { useScroll, useTransform } from 'framer-motion';
 import { Highlighter } from '@/components/ui/highlighter';
+import WobbleCardDemo from '@/components/wobble-card-demo';
 
 export default function Home() {
   const { scrollY } = useScroll();
@@ -209,6 +215,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
+                  className='my-10'
                 >
                   <p className='text-6xl'>
                     <Highlighter
@@ -221,6 +228,19 @@ export default function Home() {
                     Works
                   </p>
                 </motion.div>
+                <WobbleCardDemo />
+                <div className='text-center my-10'>
+                  <ShinyButton className={'bg-neutral-900 mt-4'}>
+                    <div className='flex items-center gap-1'>
+                      <span>view all projects</span>
+                      <ArrowRight />
+                    </div>
+                  </ShinyButton>
+                  <div className='flex justify-end items-center opacity-80 hover:opacity-100 transition-opacity hover:text-green-400 duration-200 cursor-pointer mb-2 capitalize font-inconsolata mt-10 text-sm  w-full '>
+                    <span className='me-1'>about me</span>
+                    <ArrowDownLeft />
+                  </div>
+                </div>
               </div>
               <div className='min-h-screen'>
                 <h1>hello world</h1>
