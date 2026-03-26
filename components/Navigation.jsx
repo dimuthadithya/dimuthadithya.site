@@ -6,16 +6,19 @@ import {
 } from '@/components/ui/navigation-menu';
 import { ArrowUpRightIcon } from '@phosphor-icons/react';
 import { TextAnimate } from './ui/text-animate';
+import { PointerHighlight } from './ui/pointer-highlight';
 
 const navItems = ['Home', 'Projects', 'Framer', 'Contact', 'Resume'];
 
 function Navigation() {
   return (
     <div className='w-full flex items-center font-inconsolata'>
-      <div className='flex flex-col text-sm capitalize'>
-        <span>Dimuth Adithya</span>
-        <span className='-mt-1 text-neutral-300'>Full stack developer</span>
-      </div>
+      <PointerHighlight className=''>
+        <div className='flex flex-col text-sm capitalize'>
+          <span>Dimuth Adithya</span>
+          <span className='-mt-1 text-neutral-300'>Full stack developer</span>
+        </div>
+      </PointerHighlight>
       <div className='flex-1 text-sm font-'>
         <NavigationMenu className={'mx-auto'}>
           <NavigationMenuList
