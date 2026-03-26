@@ -85,13 +85,21 @@ export default function Home() {
         </motion.div>
         {!isLoading && (
           <motion.div
-            className=' flex flex-col items-center justify-center bg-black text-white'
+            className=' flex flex-col bg-black text-white font-playfair-display px-20 py-10'
             initial={{ y: '100vh', opacity: 0 }}
             animate={{ y: '0vh', opacity: 1 }}
             transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
           >
             <div className='min-h-screen'>
-              <h1>hello world</h1>
+              <div></div>
+              <div>
+                <h1 className='text-6xl'>
+                  Hey, I&apos;m Dimuth. I specialize in taking products from
+                  zero to one shaping B2B and B2C web & mobile applications over
+                  the past 3+ years to drive business impact.
+                </h1>
+              </div>
+              <div></div>
             </div>
             <div className='min-h-screen'>
               <h1>hello world</h1>

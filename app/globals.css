@@ -133,3 +133,7 @@
 .font-inconsolata {
   font-family: var(--font-inconsolata);
 }
+
+.font-playfair-display {
+  font-family: var(--font-playfair-display);
+}
