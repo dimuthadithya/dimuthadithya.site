@@ -79,7 +79,7 @@ export default function Footer() {
           © 2026 Dimuth Aditya. All rights reserved.
         </span>
         <span className='text-neutral-700 text-xs'>
-          Built with Next.js · Framer Motion · Antigravity
+          Built with Next.js · Framer Motion · Deployed on Vercel
         </span>
       </div>
 
