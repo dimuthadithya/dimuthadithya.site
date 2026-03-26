@@ -4,6 +4,7 @@ import { NumberTicker } from '@/components/ui/number-ticker';
 import { TextAnimate } from '@/components/ui/text-animate';
 import * as motion from 'motion/react-client';
 import { useState } from 'react';
+import { AvatarCircles } from '@/components/ui/avatar-circles';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -93,6 +94,15 @@ export default function Home() {
             <div className='min-h-screen'>
               <div></div>
               <div>
+                <AvatarCircles
+                  avatarUrls={[
+                    {
+                      imageUrl:
+                        'https://avatars.githubusercontent.com/u/119920915?v=4',
+                      profileUrl: 'https://github.com/dimuthadithya',
+                    },
+                  ]}
+                />
                 <h1 className='text-6xl'>
                   Hey, I&apos;m Dimuth. I specialize in taking products from
                   zero to one shaping B2B and B2C web & mobile applications over
