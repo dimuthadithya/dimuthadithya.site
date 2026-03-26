@@ -31,7 +31,8 @@ export default function HeroSection() {
           <AvatarCircles
             avatarUrls={[
               {
-                imageUrl: 'https://avatars.githubusercontent.com/u/119920915?v=4',
+                imageUrl:
+                  'https://avatars.githubusercontent.com/u/119920915?v=4',
                 profileUrl: 'https://github.com/dimuthadithya',
               },
             ]}
@@ -49,9 +50,8 @@ export default function HeroSection() {
           </h1>
           <h1 className='text-xl sm:text-2xl lg:text-4xl leading-snug'>
             I specialize in building modern web applications, taking products
-            from{' '}
-            <span className='text-neutral-400'>zero to one</span>.{' '}
-            Over the past 3+ years, I&apos;ve crafted scalable{' '}
+            from <span className='text-neutral-400'>zero to one</span>. Over the
+            past 3+ years, I&apos;ve crafted scalable{' '}
             <span className='text-neutral-400'>B2B &amp; B2C </span>
             solutions that drive real business{' '}
             <span className='text-neutral-400'>impact.</span>
@@ -64,7 +64,12 @@ export default function HeroSection() {
             I build products that are
             <span className='text-white ms-2'>
               <WordRotate
-                words={['scalable.', 'user-focused.', 'high-performance.', 'impactful.']}
+                words={[
+                  'scalable.',
+                  'user-focused.',
+                  'high-performance.',
+                  'impactful.',
+                ]}
               />
             </span>
           </div>
@@ -77,7 +82,7 @@ export default function HeroSection() {
         </div>
 
         {/* Scroll hint + "see selected works" */}
-        <div className='capitalize font-inconsolata mt-10 text-sm flex justify-end'>
+        <div className='capitalize font-inconsolata mt-3 text-sm flex justify-end'>
           <motion.div
             className='flex flex-1 flex-col items-start text-sm text-neutral-400 pb-2'
             style={{ opacity, y }}
@@ -88,7 +93,11 @@ export default function HeroSection() {
             <span>Scroll</span>
             <motion.span
               animate={{ y: [0, 8, 0], opacity: [1, 0.4, 1] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
             >
               <ArrowDown size={16} />
             </motion.span>
