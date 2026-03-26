@@ -47,7 +47,7 @@ function Navigation() {
         </NavigationMenu>
       </div>
       <div>
-        <span className='flex items-center '>
+        <span className='flex items-center font-inconsolata hover:opacity-100 transition-opacity hover:text-green-400 duration-200 cursor-pointer'>
           <TextAnimate animation='scaleUp' by='text' delay={1}>
             <span>Let&apos;s Talk</span>
           </TextAnimate>

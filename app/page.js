@@ -6,12 +6,14 @@ import * as motion from 'motion/react-client';
 import { useState } from 'react';
 import { AvatarCircles } from '@/components/ui/avatar-circles';
 import Navigation from '@/components/Navigation';
+import { TracingBeam } from '@/components/ui/tracing-beam';
+import { ArrowDownLeft } from '@phosphor-icons/react';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   return (
     <>
-      <div className={`bg-neutral-950 min-h-screen`}>
+      <div className={` min-h-screen`}>
         <motion.div
           className={`font-inconsolata  gap-2 items-center justify-center ${isLoading ? 'flex' : 'hidden'} h-screen tracking-tight select-none relative`}
           initial={{ y: '0vh' }}
@@ -86,75 +88,66 @@ export default function Home() {
           </motion.div>
         </motion.div>
         {!isLoading && (
-          <motion.div
-            className=' flex flex-col bg-black text-white font-playfair-display px-20 py-10 select-none'
-            initial={{ y: '100vh', opacity: 0 }}
-            animate={{ y: '0vh', opacity: 1 }}
-            transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
-          >
-            <div className='h-screen flex flex-col max-w-5xl mx-auto'>
-              <div className='mb-20'>
-                <Navigation />
+          <TracingBeam>
+            <motion.div
+              className='flex flex-col text-white font-playfair-display px-20 py-10 select-none max-w-5xl mx-auto '
+              initial={{ y: '100vh', opacity: 0 }}
+              animate={{ y: '0vh', opacity: 1 }}
+              transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
+            >
+              <div className='h-[90vh] flex flex-col'>
+                <div className='mb-20'>
+                  <Navigation />
+                </div>
+                <div className='flex-1 flex flex-col'>
+                  <div className='flex-1'>
+                    <AvatarCircles
+                      avatarUrls={[
+                        {
+                          imageUrl:
+                            'https://avatars.githubusercontent.com/u/119920915?v=4',
+                          profileUrl: 'https://github.com/dimuthadithya',
+                        },
+                      ]}
+                    />
+                    <h1 className='tracking-tight'>
+                      <TextAnimate
+                        animation='blurInUp'
+                        by='character'
+                        once={true}
+                        duration={1}
+                        className={'mb-3 text-5xl'}
+                      >
+                        Hey, I&apos;m Dimuth.
+                      </TextAnimate>
+                    </h1>
+                    <h1 className='text-4xl'>
+                      I specialize in building modern web applications, taking
+                      products from{' '}
+                      <span className='text-neutral-400'>zero to one</span>.
+                      Over the past 3+ years, I&apos;ve crafted scalable
+                      <span className='text-neutral-400'> B2B & B2C </span>
+                      solutions that drive real business
+                      <span className='text-neutral-400'> impact.</span>
+                    </h1>
+                  </div>
+                  <div className='capitalize font-inconsolata flex justify-end items-center mt-10 text-sm opacity-80 hover:opacity-100 transition-opacity hover:text-green-400 duration-200 cursor-pointer'>
+                    <span className='me-1'>see selected works</span>
+                    <ArrowDownLeft />
+                  </div>
+                </div>
               </div>
-              <div className='flex-1 '>
-                <AvatarCircles
-                  avatarUrls={[
-                    {
-                      imageUrl:
-                        'https://avatars.githubusercontent.com/u/119920915?v=4',
-                      profileUrl: 'https://github.com/dimuthadithya',
-                    },
-                  ]}
-                />
-                <h1 className='tracking-tight'>
-                  <TextAnimate
-                    animation='blurInUp'
-                    by='character'
-                    once={true}
-                    duration={1}
-                    className={'mb-3 text-5xl'}
-                  >
-                    Hey, I&apos;m Dimuth.
-                  </TextAnimate>
-                </h1>
-                <h1 className='text-4xl'>
-                  I specialize in building modern web applications, taking
-                  products from{' '}
-                  <span className='text-neutral-400'>zero to one</span>. Over
-                  the past 3+ years, I&apos;ve crafted scalable
-                  <span className='text-neutral-400'> B2B & B2C </span>
-                  solutions that drive real business
-                  <span className='text-neutral-400'> impact.</span>
-                </h1>
+              <div className='min-h-screen'>
+                <h1>hello world</h1>
               </div>
-              <div className=''>
-                <h1>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Fugiat expedita iure blanditiis numquam. Accusantium illum
-                  autem incidunt voluptates pariatur quia, quod, quo sint
-                  doloremque itaque quam nemo soluta iure ratione officia ab
-                  voluptas nostrum eligendi beatae illo consectetur quis impedit
-                  harum? Aliquid, possimus quas eius odit tempore nemo ipsum
-                  doloribus assumenda iure ipsa officia cupiditate neque quod
-                  unde modi fugit repellat numquam beatae nobis. Voluptatum
-                  maxime soluta odio natus dignissimos quidem dolores
-                  perspiciatis quia consequuntur non. Voluptatibus maxime
-                  deleniti unde tempore debitis voluptate iusto excepturi dicta
-                  quam dolore vitae commodi sed dolores officiis sit ad
-                  pariatur, et rem explicabo tenetur.
-                </h1>
+              <div className='min-h-screen'>
+                <h1>hello world</h1>
               </div>
-            </div>
-            <div className='min-h-screen'>
-              <h1>hello world</h1>
-            </div>
-            <div className='min-h-screen'>
-              <h1>hello world</h1>
-            </div>
-            <div className='min-h-screen'>
-              <h1>hello world</h1>
-            </div>
-          </motion.div>
+              <div className='min-h-screen'>
+                <h1>hello world</h1>
+              </div>
+            </motion.div>
+          </TracingBeam>
         )}
       </div>
     </>
