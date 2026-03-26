@@ -87,7 +87,7 @@ export default function Home() {
         </motion.div>
         {!isLoading && (
           <motion.div
-            className=' flex flex-col bg-black text-white font-playfair-display px-20 py-10'
+            className=' flex flex-col bg-black text-white font-playfair-display px-20 py-10 select-none'
             initial={{ y: '100vh', opacity: 0 }}
             animate={{ y: '0vh', opacity: 1 }}
             transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}

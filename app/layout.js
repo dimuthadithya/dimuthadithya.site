@@ -5,7 +5,7 @@ import {
   Noto_Sans_Pahawh_Hmong,
 } from 'next/font/google';
 import './globals.css';
-import { Pointer } from '@/components/ui/pointer';
+import { SmoothCursor } from '@/components/ui/smooth-cursor';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} ${inconsolata.variable} ${nanoSansPahwhHmong.variable} h-full antialiased`}
     >
       <body className='min-h-full flex flex-col'>
-        <Pointer />
+        <SmoothCursor />
         {children}
       </body>
     </html>
