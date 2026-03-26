@@ -1,7 +1,7 @@
 // app/sitemap.js
 
 export default function sitemap() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dimuthadithya.site';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
   // List your static routes here (add or remove paths if needed)
   const staticPages = ['', 'about', 'contact'];
