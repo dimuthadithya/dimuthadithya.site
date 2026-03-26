@@ -1,66 +1,66 @@
-'use client';
-
-import * as React from 'react';
-import Link from 'next/link';
+import React from 'react';
 import {
   NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
-  navigationMenuTriggerStyle,
+  NavigationMenuItem,
 } from '@/components/ui/navigation-menu';
-import { HyperText } from './ui/hyper-text';
-import { InteractiveHoverButton } from './ui/interactive-hover-button';
+import { ArrowUpRightIcon } from '@phosphor-icons/react';
+import { TextAnimate } from './ui/text-animate';
+import { PointerHighlight } from './ui/pointer-highlight';
 
-export function NavigationMenuDemo() {
-  const words = ['web developer', 'problem solver', 'designer', 'creator'];
+const navItems = ['Home', 'Projects', 'Framer', 'Contact', 'Resume'];
 
+function Navigation() {
   return (
-    <div className='flex items-center'>
-      <NavigationMenu className=' text-white px-6 py-4'>
-        <NavigationMenuList className='gap-6 '>
-          <NavigationMenuItem className={''}>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle() + ' bg-transparent'}
-            >
-              <Link href='/'>Home</Link>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle() + ' bg-transparent'}
-            >
-              <Link href='/about'>About</Link>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle() + ' bg-transparent'}
-            >
-              <Link href='/projects'>Projects</Link>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle() + ' bg-transparent'}
-            >
-              <Link href='/contact'>Contact</Link>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-      <div className='flex-1 justify-end flex items-end me-20 text-sm text-neutral-300 hover:text-neutral-100 transition-colors duration-75'>
-        <InteractiveHoverButton className={'text-black'}>
-          Hire Me
-        </InteractiveHoverButton>
+    <div className='w-full flex items-center font-inconsolata'>
+      <PointerHighlight className=''>
+        <div className='flex flex-col text-sm capitalize'>
+          <span>Dimuth Adithya</span>
+          <span className='-mt-1 text-neutral-300'>Full stack developer</span>
+        </div>
+      </PointerHighlight>
+      <div className='flex-1 text-sm font-'>
+        <NavigationMenu className={'mx-auto'}>
+          <NavigationMenuList
+            className='
+              bg-neutral-50 
+              rounded-full 
+              px-2 py-1 
+              flex items-center
+              gap-1
+            '
+          >
+            {navItems.map((item, index) => (
+              <NavigationMenuItem key={item}>
+                <button
+                  className={`
+                    px-4 py-1.5 text-sm rounded-full transition-all
+                    ${
+                      index === 0
+                        ? 'bg-black text-white shadow-sm'
+                        : 'text-neutral-700 hover:bg-neutral-300'
+                    }
+                  `}
+                >
+                  {item}
+                </button>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
+      </div>
+      <div>
+        <span className='flex items-center font-inconsolata hover:opacity-100 transition-opacity hover:text-green-400 duration-200 cursor-pointer'>
+          <TextAnimate animation='scaleUp' by='text' delay={1}>
+            <span>Let&apos;s Talk</span>
+          </TextAnimate>
+          <TextAnimate animation='scaleUp' by='text' delay={2}>
+            <ArrowUpRightIcon />
+          </TextAnimate>
+        </span>
       </div>
     </div>
   );
 }
+
+export default Navigation;

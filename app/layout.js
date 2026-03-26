@@ -1,11 +1,32 @@
-import { Arimo } from 'next/font/google';
+import {
+  Geist,
+  Geist_Mono,
+  Inconsolata,
+  Noto_Sans_Pahawh_Hmong,
+} from 'next/font/google';
 import './globals.css';
-import CustomCursor from '@/components/CustomCursor';
-import { StripedPattern } from '@/components/magicui/striped-pattern';
+import { SmoothCursor } from '@/components/ui/smooth-cursor';
 
-const arimo = Arimo({
-  variable: '--font-arimo',
+const geistSans = Geist({
+  variable: '--font-geist-sans',
   subsets: ['latin'],
+});
+
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
+});
+
+const inconsolata = Inconsolata({
+  variable: '--font-inconsolata',
+  subsets: ['latin'],
+  weight: '400',
+});
+
+const nanoSansPahwhHmong = Noto_Sans_Pahawh_Hmong({
+  variable: '--font-nano-sans',
+  subsets: ['latin'],
+  weight: '400',
 });
 
 export const metadata = {
@@ -15,21 +36,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en' className={`${arimo.className} h-full antialiased`}>
-      <body className='min-h-full flex flex-col overflow-x-hidden'>
-        <CustomCursor />
-        <StripedPattern
-          className={'bg-neutral-50 text-neutral-400'}
-          width={5}
-        />
-        <div className='z-11 gap-5 flex h-screen'>
-          <div className='border-2 w-1/12 bg-neutral-100 '></div>
-          <div className='flex-1 h-screen bg-neutral-100 border-2  mx-auto'>
-            <div className='bg-neutral-50 py-10 border-b-2'></div>
-            <div className='p-20'>{children}</div>
-          </div>
-          <div className='border-2 w-1/12 bg-neutral-100 h-screen'></div>
-        </div>
+    <html
+      lang='en'
+      className={`${geistSans.variable} ${geistMono.variable} ${inconsolata.variable} ${nanoSansPahwhHmong.variable} h-full antialiased`}
+    >
+      <body className='min-h-full flex flex-col bg-neutral-950 relative '>
+        <SmoothCursor />
+        {children}
       </body>
     </html>
   );
