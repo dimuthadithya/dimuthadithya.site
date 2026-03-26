@@ -705,6 +705,12 @@ export default function Home() {
               <div className='min-h-screen'>
                 <h1>hello world</h1>
               </div>
+              <div className='min-h-screen'>
+                <h1>hello world</h1>
+              </div>
+              <div className='min-h-screen'>
+                <h1>hello world</h1>
+              </div>
             </motion.div>
           </TracingBeam>
         )}
