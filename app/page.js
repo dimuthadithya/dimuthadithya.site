@@ -113,12 +113,12 @@ export default function Home() {
         {!isLoading && (
           <TracingBeam>
             <motion.div
-              className='flex flex-col text-white font-playfair-display px-20 pt-10 select-none max-w-5xl mx-auto relative'
+              className='flex flex-col text-white font-playfair-display px-4 sm:px-8 lg:px-20 pt-6 sm:pt-10 select-none max-w-5xl mx-auto relative'
               initial={{ y: '100vh', opacity: 0 }}
               animate={{ y: '0vh', opacity: 1 }}
               transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
             >
-              <div className='fixed justify-center right-10 bottom-5 font-inconsolata'>
+              <div className='fixed justify-center right-4 sm:right-10 bottom-5 font-inconsolata z-50'>
                 <CoolMode>
                   <Button className={'rounded-full h-5 w-5 bg-transparent'}>
                     DA
@@ -146,12 +146,12 @@ export default function Home() {
                         by='character'
                         once={true}
                         duration={1}
-                        className={'mb-3 text-5xl'}
+                        className={'mb-3 text-3xl sm:text-4xl lg:text-5xl'}
                       >
                         Hey, I&apos;m Dimuth.
                       </TextAnimate>
                     </h1>
-                    <h1 className='text-4xl'>
+                    <h1 className='text-xl sm:text-2xl lg:text-4xl leading-snug'>
                       I specialize in building modern web applications, taking
                       products from{' '}
                       <span className='text-neutral-400'>zero to one</span>.
@@ -161,8 +161,8 @@ export default function Home() {
                       <span className='text-neutral-400'> impact.</span>
                     </h1>
                   </div>
-                  <div className='lg:h-30 text-3xl'>
-                    <div className='text-neutral-400 hover:text-neutral-50 transition-colors duration-100 flex items-center'>
+                  <div className='lg:h-30 text-xl sm:text-2xl lg:text-3xl'>
+                    <div className='text-neutral-400 hover:text-neutral-50 transition-colors duration-100 flex flex-wrap items-center gap-x-2'>
                       I build products that are
                       <span className='text-white ms-2'>
                         <WordRotate
@@ -209,7 +209,7 @@ export default function Home() {
                         <ArrowDown size={16} />
                       </motion.span>
                     </motion.div>
-                    <div className='flex justify-end items-center opacity-80 hover:opacity-100 transition-opacity hover:text-green-400 duration-200 cursor-pointer mb-2 w-fit'>
+                    <div className='hidden sm:flex justify-end items-center opacity-80 hover:opacity-100 transition-opacity hover:text-green-400 duration-200 cursor-pointer mb-2 w-fit'>
                       <span className='me-1'>see selected works</span>
                       <ArrowDownLeft />
                     </div>
@@ -223,7 +223,7 @@ export default function Home() {
                   transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
                   className='my-10'
                 >
-                  <p className='text-6xl'>
+                  <p className='text-4xl sm:text-5xl lg:text-6xl'>
                     <Highlighter
                       action='underline'
                       color='#FF9800'
@@ -242,7 +242,7 @@ export default function Home() {
                       <ArrowRight />
                     </div>
                   </ShinyButton>
-                  <div className='flex justify-end items-center opacity-80 hover:opacity-100 transition-opacity hover:text-green-400 duration-200 cursor-pointer mb-2 capitalize font-inconsolata mt-10 text-sm  w-full '>
+                  <div className='hidden sm:flex justify-end items-center opacity-80 hover:opacity-100 transition-opacity hover:text-green-400 duration-200 cursor-pointer mb-2 capitalize font-inconsolata mt-10 text-sm w-full'>
                     <span className='me-1'>work experienece</span>
                     <ArrowDownLeft />
                   </div>
@@ -255,7 +255,7 @@ export default function Home() {
                   transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
                   className='my-10 capitalize'
                 >
-                  <p className='text-6xl'>
+                  <p className='text-4xl sm:text-5xl lg:text-6xl'>
                     <Highlighter
                       action='underline'
                       color='#FF9800'
@@ -267,7 +267,7 @@ export default function Home() {
                   </p>
                 </motion.div>
                 <TimelineDemo />
-                <div className='flex justify-end items-center opacity-80 hover:opacity-100 transition-opacity hover:text-green-400 duration-200 cursor-pointer mb-2 capitalize font-inconsolata mt-10 text-sm  w-full '>
+                <div className='hidden sm:flex justify-end items-center opacity-80 hover:opacity-100 transition-opacity hover:text-green-400 duration-200 cursor-pointer mb-2 capitalize font-inconsolata mt-10 text-sm w-full'>
                   <span className='me-1'>my stack</span>
                   <ArrowDownLeft />
                 </div>
@@ -279,7 +279,7 @@ export default function Home() {
                   transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
                   className='my-10 capitalize'
                 >
-                  <p className='text-6xl'>
+                  <p className='text-4xl sm:text-5xl lg:text-6xl'>
                     <Highlighter
                       action='underline'
                       color='#FF9800'
@@ -292,7 +292,7 @@ export default function Home() {
                   <div>
                     {/* Frontend */}
                     <div className='my-10'>
-                      <h1 className='text-4xl text-neutral-300 mb-4'>
+                      <h1 className='text-2xl sm:text-3xl lg:text-4xl text-neutral-300 mb-4'>
                         Frontend
                       </h1>
                       <div className='flex flex-wrap gap-6 items-center'>
@@ -329,7 +329,7 @@ export default function Home() {
 
                     {/* Animation & Motion */}
                     <div className='my-10'>
-                      <h1 className='text-4xl text-neutral-300 mb-4'>
+                      <h1 className='text-2xl sm:text-3xl lg:text-4xl text-neutral-300 mb-4'>
                         Animation & Motion
                       </h1>
                       <div className='flex flex-wrap gap-6 items-center'>
@@ -380,7 +380,7 @@ export default function Home() {
 
                     {/* Backend */}
                     <div className='my-10'>
-                      <h1 className='text-4xl text-neutral-300 mb-4'>
+                      <h1 className='text-2xl sm:text-3xl lg:text-4xl text-neutral-300 mb-4'>
                         Backend
                       </h1>
                       <div className='flex flex-wrap gap-6 items-center'>
@@ -415,7 +415,7 @@ export default function Home() {
 
                     {/* Database */}
                     <div className='my-10'>
-                      <h1 className='text-4xl text-neutral-300 mb-4'>
+                      <h1 className='text-2xl sm:text-3xl lg:text-4xl text-neutral-300 mb-4'>
                         Database
                       </h1>
                       <div className='flex flex-wrap gap-6 items-center'>
@@ -450,7 +450,7 @@ export default function Home() {
 
                     {/* Cloud & Hosting */}
                     <div className='my-10'>
-                      <h1 className='text-4xl text-neutral-300 mb-4'>
+                      <h1 className='text-2xl sm:text-3xl lg:text-4xl text-neutral-300 mb-4'>
                         Cloud & Hosting
                       </h1>
                       <div className='flex flex-wrap gap-6 items-center'>
@@ -482,7 +482,7 @@ export default function Home() {
 
                     {/* Design & Creative */}
                     <div className='my-10'>
-                      <h1 className='text-4xl text-neutral-300 mb-4'>
+                      <h1 className='text-2xl sm:text-3xl lg:text-4xl text-neutral-300 mb-4'>
                         Design & Creative
                       </h1>
                       <div className='flex flex-wrap gap-6 items-center'>
@@ -512,7 +512,7 @@ export default function Home() {
 
                     {/* Tools & Workflow */}
                     <div className='my-10'>
-                      <h1 className='text-4xl text-neutral-300 mb-4'>
+                      <h1 className='text-2xl sm:text-3xl lg:text-4xl text-neutral-300 mb-4'>
                         Tools & Workflow
                       </h1>
                       <div className='flex flex-wrap gap-6 items-center'>
@@ -566,7 +566,7 @@ export default function Home() {
                     </div>
                   </div>
                 </motion.div>
-                <div className='flex justify-end items-center opacity-80 hover:opacity-100 transition-opacity hover:text-green-400 duration-200 cursor-pointer mb-2 capitalize font-inconsolata mt-10 text-sm  w-full '>
+                <div className='hidden sm:flex justify-end items-center opacity-80 hover:opacity-100 transition-opacity hover:text-green-400 duration-200 cursor-pointer mb-2 capitalize font-inconsolata mt-10 text-sm w-full'>
                   <span className='me-1'>my education</span>
                   <ArrowDownLeft />
                 </div>
@@ -578,7 +578,7 @@ export default function Home() {
                   transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
                   className='my-10 capitalize'
                 >
-                  <p className='text-6xl'>
+                  <p className='text-4xl sm:text-5xl lg:text-6xl'>
                     <Highlighter
                       action='underline'
                       color='#FF9800'
@@ -595,7 +595,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 1, 0.5, 1] }}
-                  className='mb-12 border border-neutral-800 rounded-2xl p-8 bg-neutral-950'
+                  className='mb-12 border border-neutral-800 rounded-2xl p-4 sm:p-8 bg-neutral-950'
                 >
                   <div className='flex items-start justify-between mb-6 flex-wrap gap-4'>
                     <div>
@@ -664,7 +664,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 1, 0.5, 1] }}
-                  className='mb-12 border border-neutral-800 rounded-2xl p-8 bg-neutral-950'
+                  className='mb-12 border border-neutral-800 rounded-2xl p-4 sm:p-8 bg-neutral-950'
                 >
                   <div className='flex items-start justify-between mb-6 flex-wrap gap-4'>
                     <div>
@@ -724,7 +724,7 @@ export default function Home() {
                   <TextRevealCard
                     text='Have a project in mind?'
                     revealText='dimuthadithya01@gmail.com'
-                    className='w-full max-w-3xl'
+                    className='w-full'
                   >
                     <TextRevealCardTitle>
                       Hover to reveal
@@ -815,7 +815,7 @@ export default function Home() {
                 </div>
 
                 {/* Divider */}
-                <div className='border-t border-neutral-900 mb-4 flex justify-between items-center pt-4 font-inconsolata'>
+                <div className='border-t border-neutral-900 mb-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 pt-4 font-inconsolata'>
                   <span className='text-neutral-600 text-xs'>
                     © 2026 Dimuth Aditya. All rights reserved.
                   </span>

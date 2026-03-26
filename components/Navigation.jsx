@@ -15,12 +15,13 @@ function Navigation() {
     <div className='w-full flex items-center font-inconsolata'>
       <PointerHighlight className=''>
         <div className='flex flex-col text-sm capitalize'>
-          <span>Dimuth Adithya</span>
-          <span className='-mt-1 text-neutral-300'>Full stack developer</span>
+          <span className='hidden sm:block'>Dimuth Adithya</span>
+          <span className='sm:hidden font-bold text-base'>DA</span>
+          <span className='-mt-1 text-neutral-300 hidden sm:block'>Full stack developer</span>
         </div>
       </PointerHighlight>
-      <div className='flex-1 text-sm font-'>
-        <NavigationMenu className={'mx-auto'}>
+      <div className='flex-1 text-sm font-hidden sm:block'>
+        <NavigationMenu className={'mx-auto hidden sm:flex'}>
           <NavigationMenuList
             className='
               bg-neutral-50 
@@ -52,7 +53,7 @@ function Navigation() {
       <div>
         <span className='flex items-center font-inconsolata hover:opacity-100 transition-opacity hover:text-green-400 duration-200 cursor-pointer'>
           <TextAnimate animation='scaleUp' by='text' delay={1}>
-            <span>Let&apos;s Talk</span>
+            <span className='hidden sm:inline'>Let&apos;s Talk</span>
           </TextAnimate>
           <TextAnimate animation='scaleUp' by='text' delay={2}>
             <ArrowUpRightIcon />
