@@ -3,8 +3,8 @@
 export default function sitemap() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
-  // List your static routes here (add or remove paths if needed)
-  const staticPages = ['', 'about', 'contact'];
+  // List your static routes here
+  const staticPages = [''];
 
   return staticPages.map((page) => ({
     url: page ? `${baseUrl}/${page}` : baseUrl,

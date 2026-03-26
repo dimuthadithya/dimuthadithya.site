@@ -48,14 +48,14 @@ export default function HeroSection() {
               Hey, I&apos;m Dimuth.
             </TextAnimate>
           </h1>
-          <h1 className='text-xl sm:text-2xl lg:text-4xl leading-snug'>
+          <h2 className='text-xl sm:text-2xl lg:text-4xl leading-snug'>
             I specialize in building modern web applications, taking products
             from <span className='text-neutral-400'>zero to one</span>. Over the
             past 3+ years, I&apos;ve crafted scalable{' '}
             <span className='text-neutral-400'>B2B &amp; B2C </span>
             solutions that drive real business{' '}
             <span className='text-neutral-400'>impact.</span>
-          </h1>
+          </h2>
         </div>
 
         {/* Bottom row */}
