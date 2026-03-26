@@ -21,6 +21,11 @@ import { useScroll, useTransform } from 'framer-motion';
 import { Highlighter } from '@/components/ui/highlighter';
 import WobbleCardDemo from '@/components/wobble-card-demo';
 import TimelineDemo from '@/components/timeline-demo';
+import {
+  TextRevealCard,
+  TextRevealCardTitle,
+  TextRevealCardDescription,
+} from '@/components/ui/text-reveal-card';
 
 export default function Home() {
   const { scrollY } = useScroll();
@@ -702,14 +707,48 @@ export default function Home() {
                   </div>
                 </motion.div>
               </div>
-              <div className='min-h-screen'>
-                <h1>hello world</h1>
-              </div>
-              <div className='min-h-screen'>
-                <h1>hello world</h1>
-              </div>
-              <div className='min-h-screen'>
-                <h1>hello world</h1>
+              {/* Contact / CTA */}
+              <div className='min-h-screen flex flex-col justify-center items-center'>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
+                  className='flex flex-col items-center gap-6 w-full'
+                >
+                  <div className='text-center mb-4'>
+                    <span className='text-xs font-inconsolata text-orange-400 tracking-widest uppercase'>
+                      Let&apos;s work together
+                    </span>
+                  </div>
+
+                  <TextRevealCard
+                    text='Have a project in mind?'
+                    revealText='dimuthadithya01@gmail.com'
+                    className='w-full max-w-3xl'
+                  >
+                    <TextRevealCardTitle>
+                      Hover to reveal
+                    </TextRevealCardTitle>
+                    <TextRevealCardDescription>
+                      Slide your mouse across to get in touch.
+                    </TextRevealCardDescription>
+                  </TextRevealCard>
+
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.3, duration: 0.5 }}
+                    className='flex items-center gap-4 mt-4 font-inconsolata text-sm text-neutral-500'
+                  >
+                    <a
+                      href='mailto:dimuthadithya01@gmail.com'
+                      className='hover:text-white transition-colors duration-200 flex items-center gap-2 group'
+                    >
+                      <span className='w-4 h-px bg-neutral-600 group-hover:bg-neutral-300 transition-colors duration-200'></span>
+                      dimuthadithya01@gmail.com
+                    </a>
+                  </motion.div>
+                </motion.div>
               </div>
             </motion.div>
           </TracingBeam>
