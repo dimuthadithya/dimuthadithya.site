@@ -594,7 +594,11 @@ export default function Home() {
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 1, 0.5, 1] }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.1,
+                    ease: [0.25, 1, 0.5, 1],
+                  }}
                   className='mb-12 border border-neutral-800 rounded-2xl p-4 sm:p-8 bg-neutral-950'
                 >
                   <div className='flex items-start justify-between mb-6 flex-wrap gap-4'>
@@ -611,7 +615,9 @@ export default function Home() {
                     </div>
                     <div className='flex items-center gap-2 bg-neutral-900 border border-neutral-700 rounded-full px-4 py-2'>
                       <span className='w-2 h-2 rounded-full bg-green-400 animate-pulse'></span>
-                      <span className='text-green-400 font-inconsolata text-sm'>Completed</span>
+                      <span className='text-green-400 font-inconsolata text-sm'>
+                        Completed
+                      </span>
                     </div>
                   </div>
 
@@ -642,7 +648,10 @@ export default function Home() {
                           {s.subjects ? (
                             <ul className='text-neutral-400 text-sm font-inconsolata space-y-1'>
                               {s.subjects.map((sub) => (
-                                <li key={sub} className='flex items-center gap-2'>
+                                <li
+                                  key={sub}
+                                  className='flex items-center gap-2'
+                                >
                                   <span className='w-1 h-1 rounded-full bg-orange-400'></span>
                                   {sub}
                                 </li>
@@ -663,7 +672,11 @@ export default function Home() {
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 1, 0.5, 1] }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.2,
+                    ease: [0.25, 1, 0.5, 1],
+                  }}
                   className='mb-12 border border-neutral-800 rounded-2xl p-4 sm:p-8 bg-neutral-950'
                 >
                   <div className='flex items-start justify-between mb-6 flex-wrap gap-4'>
@@ -680,14 +693,28 @@ export default function Home() {
                     </div>
                     <div className='flex items-center gap-2 bg-neutral-900 border border-neutral-700 rounded-full px-4 py-2'>
                       <span className='w-2 h-2 rounded-full bg-blue-400'></span>
-                      <span className='text-blue-400 font-inconsolata text-sm'>2020</span>
+                      <span className='text-blue-400 font-inconsolata text-sm'>
+                        2020
+                      </span>
                     </div>
                   </div>
 
                   <div className='flex flex-wrap gap-4'>
                     {[
-                      { grade: 'A', label: '1 A pass', color: 'text-green-400', border: 'border-green-900', bg: 'bg-green-950/40' },
-                      { grade: 'B', label: '2 B passes', color: 'text-blue-400', border: 'border-blue-900', bg: 'bg-blue-950/40' },
+                      {
+                        grade: 'A',
+                        label: '1 A pass',
+                        color: 'text-green-400',
+                        border: 'border-green-900',
+                        bg: 'bg-green-950/40',
+                      },
+                      {
+                        grade: 'B',
+                        label: '2 B passes',
+                        color: 'text-blue-400',
+                        border: 'border-blue-900',
+                        bg: 'bg-blue-950/40',
+                      },
                     ].map((item) => (
                       <motion.div
                         key={item.grade}
@@ -696,39 +723,56 @@ export default function Home() {
                         transition={{ duration: 0.4 }}
                         className={`flex items-center gap-3 px-6 py-4 rounded-xl border ${item.border} ${item.bg}`}
                       >
-                        <span className={`text-4xl font-bold font-playfair-display ${item.color}`}>
+                        <span
+                          className={`text-4xl font-bold font-playfair-display ${item.color}`}
+                        >
                           {item.grade}
                         </span>
-                        <span className={`font-inconsolata text-sm ${item.color} opacity-80`}>
+                        <span
+                          className={`font-inconsolata text-sm ${item.color} opacity-80`}
+                        >
                           {item.label}
                         </span>
                       </motion.div>
                     ))}
                   </div>
                 </motion.div>
+                <div className='hidden sm:flex justify-end items-center opacity-80 hover:opacity-100 transition-opacity hover:text-green-400 duration-200 cursor-pointer mb-2 capitalize font-inconsolata mt-10 text-sm w-full'>
+                  <span className='me-1'>Let&apos;s talk</span>
+                  <ArrowDownLeft />
+                </div>
               </div>
               {/* Contact / CTA */}
-              <div className='min-h-screen flex flex-col justify-center items-center'>
+              <div className='min-h-screen flex flex-col'>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
+                  className='my-10 capitalize'
+                >
+                  <p className='text-4xl sm:text-5xl lg:text-6xl'>
+                    <Highlighter
+                      action='underline'
+                      color='#FF9800'
+                      isView={true}
+                    >
+                      Let&apos;s
+                    </Highlighter>{' '}
+                    Talk
+                  </p>
+                </motion.div>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
                   className='flex flex-col items-center gap-6 w-full'
                 >
-                  <div className='text-center mb-4'>
-                    <span className='text-xs font-inconsolata text-orange-400 tracking-widest uppercase'>
-                      Let&apos;s work together
-                    </span>
-                  </div>
-
                   <TextRevealCard
                     text='Have a project in mind?'
                     revealText='dimuthadithya01@gmail.com'
                     className='w-full'
                   >
-                    <TextRevealCardTitle>
-                      Hover to reveal
-                    </TextRevealCardTitle>
+                    <TextRevealCardTitle>Hover to reveal</TextRevealCardTitle>
                     <TextRevealCardDescription>
                       Slide your mouse across to get in touch.
                     </TextRevealCardDescription>
@@ -796,7 +840,10 @@ export default function Home() {
                       Find me
                     </span>
                     {[
-                      { label: 'GitHub', href: 'https://github.com/dimuthadithya' },
+                      {
+                        label: 'GitHub',
+                        href: 'https://github.com/dimuthadithya',
+                      },
                       { label: 'LinkedIn', href: '#' },
                       { label: 'Twitter / X', href: '#' },
                     ].map((link) => (
