@@ -1,22 +1,15 @@
 // app/sitemap.js
 
-export async function GET() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
-  // List your static routes here
+export default function sitemap() {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dimuthadithya.site';
+
+  // List your static routes here (add or remove paths if needed)
   const staticPages = ['', 'about', 'contact'];
 
-  const pages = staticPages
-    .map((page) => `<url><loc>${baseUrl}/${page}</loc></url>`)
-    .join('');
-
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-      ${pages}
-    </urlset>`;
-
-  return new Response(sitemap, {
-    headers: {
-      'Content-Type': 'application/xml',
-    },
-  });
+  return staticPages.map((page) => ({
+    url: page ? `${baseUrl}/${page}` : baseUrl,
+    lastModified: new Date(),
+    changeFrequency: page === '' ? 'yearly' : 'monthly',
+    priority: page === '' ? 1 : 0.8,
+  }));
 }
