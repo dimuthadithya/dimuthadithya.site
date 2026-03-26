@@ -7,14 +7,20 @@ import { useState } from 'react';
 import { AvatarCircles } from '@/components/ui/avatar-circles';
 import Navigation from '@/components/Navigation';
 import { TracingBeam } from '@/components/ui/tracing-beam';
-import { ArrowDownIcon, ArrowDownLeft } from '@phosphor-icons/react';
+import { ArrowDown, ArrowDownIcon, ArrowDownLeft } from '@phosphor-icons/react';
 import { WordRotate } from '@/components/ui/word-rotate';
 import { ShinyButton } from '@/components/ui/shiny-button';
 import { CoolMode } from '@/components/ui/cool-mode';
 import { Button } from '@/components/ui/button';
+import { useScroll, useTransform } from 'framer-motion';
 
 export default function Home() {
+  const { scrollY } = useScroll();
+
   const [isLoading, setIsLoading] = useState(true);
+  const opacity = useTransform(scrollY, [0, 50], [1, 0]);
+  const y = useTransform(scrollY, [0, 50], [0, 20]);
+
   return (
     <>
       <div className={` min-h-screen`}>
@@ -163,9 +169,37 @@ export default function Home() {
                       </div>
                     </ShinyButton>
                   </div>
-                  <div className='capitalize font-inconsolata flex justify-end items-center mt-10 text-sm opacity-80 hover:opacity-100 transition-opacity hover:text-green-400 duration-200 cursor-pointer mb-2'>
-                    <span className='me-1'>see selected works</span>
-                    <ArrowDownLeft />
+                  <div className='capitalize font-inconsolata mt-10 text-sm flex justify-end'>
+                    <motion.div
+                      className='flex flex-col items-center text-sm text-neutral-400 mx-auto text-center'
+                      style={{ opacity, y }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{
+                        duration: 0.5,
+                        delay: 5,
+                      }}
+                    >
+                      <span>Scroll</span>
+
+                      <motion.span
+                        animate={{
+                          y: [0, 8, 0],
+                          opacity: [1, 0.4, 1],
+                        }}
+                        transition={{
+                          duration: 1.5,
+                          repeat: Infinity,
+                          ease: 'easeInOut',
+                        }}
+                      >
+                        <ArrowDown size={16} />
+                      </motion.span>
+                    </motion.div>
+                    <div className='flex justify-end items-center opacity-80 hover:opacity-100 transition-opacity hover:text-green-400 duration-200 cursor-pointer mb-2 w-fit'>
+                      <span className='me-1'>see selected works</span>
+                      <ArrowDownLeft />
+                    </div>
                   </div>
                 </div>
               </div>
