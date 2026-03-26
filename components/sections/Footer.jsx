@@ -14,7 +14,7 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { label: 'GitHub', href: 'https://github.com/dimuthadithya' },
+    { label: 'GitHub', href: process.env.NEXT_PUBLIC_GITHUB_URL },
     { label: 'LinkedIn', href: '#' },
     { label: 'Twitter / X', href: '#' },
   ];

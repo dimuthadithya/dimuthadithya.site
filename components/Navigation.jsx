@@ -149,7 +149,7 @@ function Navigation() {
               </a>
               <div className='flex items-center gap-4'>
                 {[
-                  { label: 'GitHub', href: 'https://github.com/dimuthadithya' },
+                  { label: 'GitHub', href: process.env.NEXT_PUBLIC_GITHUB_URL },
                   { label: 'LinkedIn', href: '#' },
                   { label: 'Twitter', href: '#' },
                 ].map((s) => (

@@ -33,7 +33,7 @@ export default function HeroSection() {
               {
                 imageUrl:
                   'https://avatars.githubusercontent.com/u/119920915?v=4',
-                profileUrl: 'https://github.com/dimuthadithya',
+                profileUrl: process.env.NEXT_PUBLIC_GITHUB_URL,
               },
             ]}
           />

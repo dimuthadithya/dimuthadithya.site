@@ -31,7 +31,7 @@ export default function TechGrid({ title, items }) {
               </div>
             ) : (
               <img
-                src={`https://skillicons.dev/icons?i=${tech.icon}`}
+                src={`${process.env.NEXT_PUBLIC_ICON_URL.split('?')[0]}?i=${tech.icon}`}
                 alt={tech.name}
                 className='w-14 h-14'
               />
