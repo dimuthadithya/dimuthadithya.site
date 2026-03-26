@@ -216,7 +216,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className='min-h-screen'>
+              <div>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -248,7 +248,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className='min-h-screen'>
+              <div>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -272,7 +272,7 @@ export default function Home() {
                   <ArrowDownLeft />
                 </div>
               </div>
-              <div className='min-h-screen'>
+              <div>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -290,7 +290,6 @@ export default function Home() {
                     stack
                   </p>
                   <div>
-                    {/* Frontend */}
                     <div className='my-10'>
                       <h1 className='text-2xl sm:text-3xl lg:text-4xl text-neutral-300 mb-4'>
                         Frontend
@@ -327,7 +326,6 @@ export default function Home() {
                       </div>
                     </div>
 
-                    {/* Animation & Motion */}
                     <div className='my-10'>
                       <h1 className='text-2xl sm:text-3xl lg:text-4xl text-neutral-300 mb-4'>
                         Animation & Motion
@@ -378,7 +376,6 @@ export default function Home() {
                       </div>
                     </div>
 
-                    {/* Backend */}
                     <div className='my-10'>
                       <h1 className='text-2xl sm:text-3xl lg:text-4xl text-neutral-300 mb-4'>
                         Backend
@@ -413,7 +410,6 @@ export default function Home() {
                       </div>
                     </div>
 
-                    {/* Database */}
                     <div className='my-10'>
                       <h1 className='text-2xl sm:text-3xl lg:text-4xl text-neutral-300 mb-4'>
                         Database
@@ -448,7 +444,6 @@ export default function Home() {
                       </div>
                     </div>
 
-                    {/* Cloud & Hosting */}
                     <div className='my-10'>
                       <h1 className='text-2xl sm:text-3xl lg:text-4xl text-neutral-300 mb-4'>
                         Cloud & Hosting
@@ -480,7 +475,6 @@ export default function Home() {
                       </div>
                     </div>
 
-                    {/* Design & Creative */}
                     <div className='my-10'>
                       <h1 className='text-2xl sm:text-3xl lg:text-4xl text-neutral-300 mb-4'>
                         Design & Creative
@@ -510,7 +504,6 @@ export default function Home() {
                       </div>
                     </div>
 
-                    {/* Tools & Workflow */}
                     <div className='my-10'>
                       <h1 className='text-2xl sm:text-3xl lg:text-4xl text-neutral-300 mb-4'>
                         Tools & Workflow
@@ -571,7 +564,7 @@ export default function Home() {
                   <ArrowDownLeft />
                 </div>
               </div>
-              <div className='min-h-screen'>
+              <div>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -742,8 +735,7 @@ export default function Home() {
                   <ArrowDownLeft />
                 </div>
               </div>
-              {/* Contact / CTA */}
-              <div className='min-h-screen flex flex-col'>
+              <div className='flex flex-col'>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -794,7 +786,6 @@ export default function Home() {
                   </motion.div>
                 </motion.div>
               </div>
-              {/* Footer */}
               <footer className='border-t border-neutral-800 pt-16 pb-0 mt-10'>
                 {/* Footer grid */}
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-10 mb-16 font-inconsolata'>
