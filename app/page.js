@@ -262,6 +262,32 @@ export default function Home() {
                   </p>
                 </motion.div>
                 <TimelineDemo />
+                <div className='flex justify-end items-center opacity-80 hover:opacity-100 transition-opacity hover:text-green-400 duration-200 cursor-pointer mb-2 capitalize font-inconsolata mt-10 text-sm  w-full '>
+                  <span className='me-1'>my stack</span>
+                  <ArrowDownLeft />
+                </div>
+              </div>
+              <div className='min-h-screen'>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
+                  className='my-10 capitalize'
+                >
+                  <p className='text-6xl'>
+                    <Highlighter
+                      action='underline'
+                      color='#FF9800'
+                      isView={true}
+                    >
+                      my
+                    </Highlighter>{' '}
+                    stack
+                  </p>
+                </motion.div>
+              </div>
+              <div className='min-h-screen'>
+                <h1>hello world</h1>
               </div>
               <div className='min-h-screen'>
                 <h1>hello world</h1>
