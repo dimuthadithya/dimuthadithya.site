@@ -116,18 +116,15 @@ export default function Home() {
                   >
                     Hey, I&apos;m Dimuth.
                   </TextAnimate>
-                  <TextAnimate
-                    animation='slideUp'
-                    by='word'
-                    once={true}
-                    delay={1.3}
-                    className={'text-4xl'}
-                  >
-                    I specialize in building modern web applications, taking
-                    products from zero to one. Over the past 3+ years, I&apos;ve
-                    crafted scalable B2B & B2C solutions that drive real
-                    business impact.
-                  </TextAnimate>
+                </h1>
+                <h1 className='text-4xl'>
+                  I specialize in building modern web applications, taking
+                  products from{' '}
+                  <span className='text-neutral-400'>zero to one</span>. Over
+                  the past 3+ years, I&apos;ve crafted scalable
+                  <span className='text-neutral-400'> B2B & B2C </span>
+                  solutions that drive real business
+                  <span className='text-neutral-400'> impact.</span>
                 </h1>
               </div>
               <div className=''>
