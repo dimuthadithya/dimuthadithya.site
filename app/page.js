@@ -171,7 +171,7 @@ export default function Home() {
                   </div>
                   <div className='capitalize font-inconsolata mt-10 text-sm flex justify-end'>
                     <motion.div
-                      className='flex flex-col items-center text-sm text-neutral-400 mx-auto text-center'
+                      className='flex flex-1 flex-col items-start text-sm text-neutral-400 pb-2'
                       style={{ opacity, y }}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
