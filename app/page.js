@@ -284,6 +284,22 @@ export default function Home() {
                     </Highlighter>{' '}
                     stack
                   </p>
+                  <div>
+                    <div className='my-10'>
+                      <h1 className='text-4xl text-neutral-300 '>Frontend</h1>
+                    </div>
+                    <div className='my-10'>
+                      <h1 className='text-4xl text-neutral-300 '>Backend</h1>
+                    </div>
+                    <div className='my-10'>
+                      <h1 className='text-4xl text-neutral-300 '>Database</h1>
+                    </div>
+                    <div className='my-10'>
+                      <h1 className='text-4xl text-neutral-300 '>
+                        Tools & Workflow
+                      </h1>
+                    </div>
+                  </div>
                 </motion.div>
               </div>
               <div className='min-h-screen'>
