@@ -14,10 +14,26 @@ export const TracingBeam = ({ children, className }) => {
   const [svgHeight, setSvgHeight] = useState(0);
 
   useEffect(() => {
-    if (contentRef.current) {
-      setSvgHeight(contentRef.current.offsetHeight);
-    }
-  }, []);
+    if (!contentRef.current) return;
+
+    // Initial set
+    setSvgHeight(contentRef.current.offsetHeight);
+
+    // ResizeObserver for dynamic content
+    const observer = new window.ResizeObserver((entries) => {
+      for (let entry of entries) {
+        if (entry.target === contentRef.current) {
+          setSvgHeight(entry.contentRect.height);
+        }
+      }
+    });
+    observer.observe(contentRef.current);
+
+    // Cleanup
+    return () => {
+      observer.disconnect();
+    };
+  }, [children]);
 
   const y1 = useSpring(
     useTransform(scrollYProgress, [0, 0.8], [50, svgHeight]),
