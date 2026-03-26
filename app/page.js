@@ -5,6 +5,8 @@ import { TextAnimate } from '@/components/ui/text-animate';
 import * as motion from 'motion/react-client';
 import { useState } from 'react';
 import { AvatarCircles } from '@/components/ui/avatar-circles';
+import Navigation from '@/components/Navigation';
+import { Highlighter } from '@/components/ui/highlighter';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -91,9 +93,11 @@ export default function Home() {
             animate={{ y: '0vh', opacity: 1 }}
             transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
           >
-            <div className='min-h-screen'>
-              <div></div>
-              <div>
+            <div className='h-screen flex flex-col max-w-7xl mx-auto'>
+              <div className='mb-20'>
+                <Navigation />
+              </div>
+              <div className='flex-1 '>
                 <AvatarCircles
                   avatarUrls={[
                     {
@@ -103,13 +107,45 @@ export default function Home() {
                     },
                   ]}
                 />
-                <h1 className='text-6xl'>
-                  Hey, I&apos;m Dimuth. I specialize in taking products from
-                  zero to one shaping B2B and B2C web & mobile applications over
-                  the past 3+ years to drive business impact.
+                <h1 className='text-5xl -tracking-normal leading-15'>
+                  <TextAnimate
+                    animation='blurInUp'
+                    by='character'
+                    once={true}
+                    duration={1}
+                  >
+                    Hey, I&apos;m Dimuth.
+                  </TextAnimate>
+                  <TextAnimate
+                    animation='slideUp'
+                    by='word'
+                    once={true}
+                    delay={1.3}
+                  >
+                    I specialize in building modern web applications, taking
+                    products from zero to one. Over the past 3+ years, I&apos;ve
+                    crafted scalable B2B & B2C solutions that drive real
+                    business impact.
+                  </TextAnimate>
                 </h1>
               </div>
-              <div></div>
+              <div className=''>
+                <h1>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Fugiat expedita iure blanditiis numquam. Accusantium illum
+                  autem incidunt voluptates pariatur quia, quod, quo sint
+                  doloremque itaque quam nemo soluta iure ratione officia ab
+                  voluptas nostrum eligendi beatae illo consectetur quis impedit
+                  harum? Aliquid, possimus quas eius odit tempore nemo ipsum
+                  doloribus assumenda iure ipsa officia cupiditate neque quod
+                  unde modi fugit repellat numquam beatae nobis. Voluptatum
+                  maxime soluta odio natus dignissimos quidem dolores
+                  perspiciatis quia consequuntur non. Voluptatibus maxime
+                  deleniti unde tempore debitis voluptate iusto excepturi dicta
+                  quam dolore vitae commodi sed dolores officiis sit ad
+                  pariatur, et rem explicabo tenetur.
+                </h1>
+              </div>
             </div>
             <div className='min-h-screen'>
               <h1>hello world</h1>

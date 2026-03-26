@@ -13,7 +13,7 @@ export const AvatarCircles = ({ numPeople, className, avatarUrls }) => {
         >
           <img
             key={index}
-            className='h-30 w-30 rounded-full border-2 border-white dark:border-gray-800 mb-5'
+            className='h-20 w-20 rounded-full border-2 border-white dark:border-gray-800 mb-5'
             src={url.imageUrl}
             width={40}
             height={40}
