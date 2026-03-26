@@ -26,6 +26,7 @@ import {
   TextRevealCardTitle,
   TextRevealCardDescription,
 } from '@/components/ui/text-reveal-card';
+import { TextHoverEffect } from '@/components/ui/text-hover-effect';
 
 export default function Home() {
   const { scrollY } = useScroll();
@@ -750,6 +751,85 @@ export default function Home() {
                   </motion.div>
                 </motion.div>
               </div>
+              {/* Footer */}
+              <footer className='border-t border-neutral-800 pt-16 pb-0 mt-10'>
+                {/* Footer grid */}
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-10 mb-16 font-inconsolata'>
+                  {/* Brand col */}
+                  <div className='flex flex-col gap-3'>
+                    <span className='text-white text-lg tracking-tight font-playfair-display'>
+                      Dimuth Aditya
+                    </span>
+                    <p className='text-neutral-500 text-sm leading-relaxed max-w-xs'>
+                      Full-stack developer based in Sri Lanka, building modern
+                      web applications from zero to one.
+                    </p>
+                    <span className='text-neutral-600 text-xs mt-2'>
+                      dimuthadithya01@gmail.com
+                    </span>
+                  </div>
+
+                  {/* Nav col */}
+                  <div className='flex flex-col gap-3'>
+                    <span className='text-neutral-400 text-xs tracking-widest uppercase mb-1'>
+                      Navigation
+                    </span>
+                    {[
+                      { label: 'Selected Works', href: '#works' },
+                      { label: 'Work Experience', href: '#experience' },
+                      { label: 'My Stack', href: '#stack' },
+                      { label: 'Education', href: '#education' },
+                      { label: 'Contact', href: '#contact' },
+                    ].map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        className='text-neutral-500 text-sm hover:text-white transition-colors duration-200 w-fit'
+                      >
+                        {link.label}
+                      </a>
+                    ))}
+                  </div>
+
+                  {/* Social col */}
+                  <div className='flex flex-col gap-3'>
+                    <span className='text-neutral-400 text-xs tracking-widest uppercase mb-1'>
+                      Find me
+                    </span>
+                    {[
+                      { label: 'GitHub', href: 'https://github.com/dimuthadithya' },
+                      { label: 'LinkedIn', href: '#' },
+                      { label: 'Twitter / X', href: '#' },
+                    ].map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='text-neutral-500 text-sm hover:text-white transition-colors duration-200 w-fit flex items-center gap-2 group'
+                      >
+                        <span className='w-3 h-px bg-neutral-700 group-hover:w-5 group-hover:bg-white transition-all duration-200'></span>
+                        {link.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Divider */}
+                <div className='border-t border-neutral-900 mb-4 flex justify-between items-center pt-4 font-inconsolata'>
+                  <span className='text-neutral-600 text-xs'>
+                    © 2026 Dimuth Aditya. All rights reserved.
+                  </span>
+                  <span className='text-neutral-700 text-xs'>
+                    Built with Next.js · Framer Motion · Antigravity
+                  </span>
+                </div>
+
+                {/* Text hover signature */}
+                <div className='h-40 w-full'>
+                  <TextHoverEffect text='Dimuth' duration={0.3} />
+                </div>
+              </footer>
             </motion.div>
           </TracingBeam>
         )}
