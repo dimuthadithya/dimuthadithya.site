@@ -13,6 +13,7 @@ import { ShinyButton } from '@/components/ui/shiny-button';
 import { CoolMode } from '@/components/ui/cool-mode';
 import { Button } from '@/components/ui/button';
 import { useScroll, useTransform } from 'framer-motion';
+import { Highlighter } from '@/components/ui/highlighter';
 
 export default function Home() {
   const { scrollY } = useScroll();
@@ -204,7 +205,22 @@ export default function Home() {
                 </div>
               </div>
               <div className='min-h-screen'>
-                <h1>hello world</h1>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
+                >
+                  <p className='text-6xl'>
+                    <Highlighter
+                      action='underline'
+                      color='#FF9800'
+                      isView={true}
+                    >
+                      Selected
+                    </Highlighter>{' '}
+                    Works
+                  </p>
+                </motion.div>
               </div>
               <div className='min-h-screen'>
                 <h1>hello world</h1>
