@@ -20,6 +20,7 @@ import { Button } from '@/components/ui/button';
 import { useScroll, useTransform } from 'framer-motion';
 import { Highlighter } from '@/components/ui/highlighter';
 import WobbleCardDemo from '@/components/wobble-card-demo';
+import TimelineDemo from '@/components/timeline-demo';
 
 export default function Home() {
   const { scrollY } = useScroll();
@@ -237,13 +238,30 @@ export default function Home() {
                     </div>
                   </ShinyButton>
                   <div className='flex justify-end items-center opacity-80 hover:opacity-100 transition-opacity hover:text-green-400 duration-200 cursor-pointer mb-2 capitalize font-inconsolata mt-10 text-sm  w-full '>
-                    <span className='me-1'>about me</span>
+                    <span className='me-1'>work experienece</span>
                     <ArrowDownLeft />
                   </div>
                 </div>
               </div>
               <div className='min-h-screen'>
-                <h1>hello world</h1>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
+                  className='my-10 capitalize'
+                >
+                  <p className='text-6xl'>
+                    <Highlighter
+                      action='underline'
+                      color='#FF9800'
+                      isView={true}
+                    >
+                      work
+                    </Highlighter>{' '}
+                    experience
+                  </p>
+                </motion.div>
+                <TimelineDemo />
               </div>
               <div className='min-h-screen'>
                 <h1>hello world</h1>
