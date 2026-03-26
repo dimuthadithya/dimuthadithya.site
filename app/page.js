@@ -95,7 +95,7 @@ export default function Home() {
               animate={{ y: '0vh', opacity: 1 }}
               transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
             >
-              <div className='h-[90vh] flex flex-col'>
+              <div className='h-[94vh] flex flex-col'>
                 <div className='mb-20'>
                   <Navigation />
                 </div>
@@ -131,7 +131,8 @@ export default function Home() {
                       <span className='text-neutral-400'> impact.</span>
                     </h1>
                   </div>
-                  <div className='capitalize font-inconsolata flex justify-end items-center mt-10 text-sm opacity-80 hover:opacity-100 transition-opacity hover:text-green-400 duration-200 cursor-pointer'>
+                  <div>hello</div>
+                  <div className='capitalize font-inconsolata flex justify-end items-center mt-10 text-sm opacity-80 hover:opacity-100 transition-opacity hover:text-green-400 duration-200 cursor-pointer mb-2'>
                     <span className='me-1'>see selected works</span>
                     <ArrowDownLeft />
                   </div>
