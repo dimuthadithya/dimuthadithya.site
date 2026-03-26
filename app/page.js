@@ -26,7 +26,6 @@ import {
   TextRevealCardTitle,
   TextRevealCardDescription,
 } from '@/components/ui/text-reveal-card';
-import { TextHoverEffect } from '@/components/ui/text-hover-effect';
 
 export default function Home() {
   const { scrollY } = useScroll();
@@ -114,7 +113,7 @@ export default function Home() {
         {!isLoading && (
           <TracingBeam>
             <motion.div
-              className='flex flex-col text-white font-playfair-display px-20 py-10 select-none max-w-5xl mx-auto relative'
+              className='flex flex-col text-white font-playfair-display px-20 pt-10 select-none max-w-5xl mx-auto relative'
               initial={{ y: '100vh', opacity: 0 }}
               animate={{ y: '0vh', opacity: 1 }}
               transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
@@ -825,9 +824,28 @@ export default function Home() {
                   </span>
                 </div>
 
-                {/* Text hover signature */}
-                <div className='h-40 w-full'>
-                  <TextHoverEffect text='Dimuth' duration={0.3} />
+                {/* Watermark signature */}
+                <div className='relative overflow-hidden h-48 w-full -mx-8 mt-6'>
+                  <span
+                    className='absolute inset-0 flex items-center select-none pointer-events-none'
+                    style={{
+                      fontSize: 'clamp(5rem, 18vw, 14rem)',
+                      fontWeight: 800,
+                      fontFamily: 'sans-serif',
+                      letterSpacing: '-0.04em',
+                      whiteSpace: 'nowrap',
+                      color: 'transparent',
+                      WebkitTextStroke: '0px',
+                      background:
+                        'linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                      lineHeight: 1,
+                    }}
+                  >
+                    Dimuth
+                  </span>
                 </div>
               </footer>
             </motion.div>
