@@ -286,18 +286,124 @@ export default function Home() {
                   </p>
                   <div>
                     <div className='my-10'>
-                      <h1 className='text-4xl text-neutral-300 '>Frontend</h1>
+                      <h1 className='text-4xl text-neutral-300 mb-4'>
+                        Frontend
+                      </h1>
+                      <div className='flex flex-wrap gap-6 items-center'>
+                        {[
+                          { name: 'React', icon: 'react' },
+                          { name: 'Next.js', icon: 'nextjs' },
+                          { name: 'TypeScript', icon: 'typescript' },
+                          { name: 'JavaScript', icon: 'javascript' },
+                          { name: 'TailwindCSS', icon: 'tailwindcss' },
+                        ].map((tech, i) => (
+                          <motion.div
+                            key={tech.icon}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.4, delay: i * 0.1 }}
+                            className='flex flex-col items-center'
+                          >
+                            <img
+                              src={`https://skillicons.dev/icons?i=${tech.icon}`}
+                              alt={tech.name}
+                              className='w-14 h-14'
+                            />
+                            <span className='mt-2 text-sm text-neutral-300'>
+                              {tech.name}
+                            </span>
+                          </motion.div>
+                        ))}
+                      </div>
                     </div>
                     <div className='my-10'>
-                      <h1 className='text-4xl text-neutral-300 '>Backend</h1>
+                      <h1 className='text-4xl text-neutral-300 mb-4'>
+                        Backend
+                      </h1>
+                      <div className='flex flex-wrap gap-6 items-center'>
+                        {[
+                          { name: 'Node.js', icon: 'nodejs' },
+                          { name: 'Express', icon: 'express' },
+                          { name: 'NestJS', icon: 'nestjs' },
+                        ].map((tech, i) => (
+                          <motion.div
+                            key={tech.icon}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.4, delay: i * 0.1 }}
+                            className='flex flex-col items-center'
+                          >
+                            <img
+                              src={`https://skillicons.dev/icons?i=${tech.icon}`}
+                              alt={tech.name}
+                              className='w-14 h-14'
+                            />
+                            <span className='mt-2 text-sm text-neutral-300'>
+                              {tech.name}
+                            </span>
+                          </motion.div>
+                        ))}
+                      </div>
                     </div>
                     <div className='my-10'>
-                      <h1 className='text-4xl text-neutral-300 '>Database</h1>
+                      <h1 className='text-4xl text-neutral-300 mb-4'>
+                        Database
+                      </h1>
+                      <div className='flex flex-wrap gap-6 items-center'>
+                        {[
+                          { name: 'MongoDB', icon: 'mongodb' },
+                          { name: 'PostgreSQL', icon: 'postgres' },
+                          { name: 'MySQL', icon: 'mysql' },
+                        ].map((tech, i) => (
+                          <motion.div
+                            key={tech.icon}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.4, delay: i * 0.1 }}
+                            className='flex flex-col items-center'
+                          >
+                            <img
+                              src={`https://skillicons.dev/icons?i=${tech.icon}`}
+                              alt={tech.name}
+                              className='w-14 h-14'
+                            />
+                            <span className='mt-2 text-sm text-neutral-300'>
+                              {tech.name}
+                            </span>
+                          </motion.div>
+                        ))}
+                      </div>
                     </div>
                     <div className='my-10'>
-                      <h1 className='text-4xl text-neutral-300 '>
+                      <h1 className='text-4xl text-neutral-300 mb-4'>
                         Tools & Workflow
                       </h1>
+                      <div className='flex flex-wrap gap-6 items-center'>
+                        {[
+                          { name: 'Git', icon: 'git' },
+                          { name: 'GitHub', icon: 'github' },
+                          { name: 'Vercel', icon: 'vercel' },
+                          { name: 'Figma', icon: 'figma' },
+                          { name: 'Docker', icon: 'docker' },
+                        ].map((tech, i) => (
+                          <motion.div
+                            key={tech.icon}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.4, delay: i * 0.1 }}
+                            className='flex flex-col items-center'
+                          >
+                            <img
+                              src={`https://skillicons.dev/icons?i=${tech.icon}`}
+                              alt={tech.name}
+                              className='w-14 h-14'
+                            />
+                            <span className='mt-2 text-sm text-neutral-300'>
+                              {tech.name}
+                            </span>
+                          </motion.div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </motion.div>
