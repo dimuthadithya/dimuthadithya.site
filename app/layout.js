@@ -5,6 +5,7 @@ import {
   Noto_Sans_Pahawh_Hmong,
 } from 'next/font/google';
 import './globals.css';
+import { Pointer } from '@/components/ui/pointer';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -39,7 +40,10 @@ export default function RootLayout({ children }) {
       lang='en'
       className={`${geistSans.variable} ${geistMono.variable} ${inconsolata.variable} ${nanoSansPahwhHmong.variable} h-full antialiased`}
     >
-      <body className='min-h-full flex flex-col'>{children}</body>
+      <body className='min-h-full flex flex-col'>
+        <Pointer />
+        {children}
+      </body>
     </html>
   );
 }
