@@ -4,47 +4,56 @@ import { Timeline } from '@/components/ui/timeline';
 export default function TimelineDemo() {
   const data = [
     {
-      title: '2024',
+      title: '2025',
+      company: 'OXYMAI PVT LTD',
+      position: 'Web Development Intern',
+      fullTime: true,
       content: (
         <div>
           <p className='mb-8 text-xs font-normal  md:text-sm text-neutral-200'>
-            Built and launched Aceternity UI and Aceternity UI Pro from scratch
+            During my Oxymai internship, I developed and delivered over 11
+            projects, including React web apps, Chrome extensions (MV3), landing
+            pages, and full-stack tools using Vite, Firebase, TailwindCSS,
+            Express, and Redis. My work focused on UI/UX design, API
+            integration, Chrome extension automation, advanced animations with
+            Framer Motion, and scalable cloud deployment.
           </p>
-          <div className='grid grid-cols-2 gap-4'>
+          <div className='grid grid-cols-1 gap-4'>
             <img
-              src='https://assets.aceternity.com/templates/startup-1.webp'
+              src='/images/projects/busybook.png'
               alt='startup template'
-              width={500}
-              height={500}
-              className='h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60'
+              className='h-20 w-full rounded-lg object-top object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60'
             />
             <img
-              src='https://assets.aceternity.com/templates/startup-2.webp'
+              src='/images/projects/ytcoursetracker.png'
               alt='startup template'
               width={500}
               height={500}
-              className='h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60'
+              className='h-20 w-full rounded-lg object-top object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60'
             />
             <img
-              src='https://assets.aceternity.com/templates/startup-3.webp'
+              src='/images/projects/whiskautomator.png'
               alt='startup template'
               width={500}
               height={500}
-              className='h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60'
+              className='h-20 w-full rounded-lg object-top object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60'
             />
             <img
-              src='https://assets.aceternity.com/templates/startup-4.webp'
+              src='/images/projects/vectorfly.png'
               alt='startup template'
               width={500}
               height={500}
-              className='h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60'
+              className='h-20 object-top w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60'
             />
           </div>
         </div>
       ),
     },
     {
-      title: 'Early 2023',
+      title: '2025',
+      company: 'PROXIMA PVT LTD',
+      position: 'Web Developer',
+      fullTime: false,
       content: (
         <div>
           <p className='mb-8 text-xs font-normal  md:text-sm text-neutral-200'>
@@ -89,7 +98,10 @@ export default function TimelineDemo() {
       ),
     },
     {
-      title: 'Changelog',
+      title: 'Early 2025',
+      company: 'Freelance Developer',
+      position: '',
+      fullTime: true,
       content: (
         <div>
           <p className='mb-4 text-xs font-normal  md:text-sm text-neutral-200'>

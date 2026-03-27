@@ -43,9 +43,20 @@ export const Timeline = ({ data }) => {
               <div className='h-10 absolute left-3 md:left-3 w-10 rounded-full bg-black flex items-center justify-center'>
                 <div className='h-4 w-4 rounded-full bg-neutral-800 border border-neutral-700 p-2' />
               </div>
-              <h3 className='hidden md:block text-xl md:pl-20 md:text-5xl font-bold  text-neutral-500 '>
-                {item.title}
-              </h3>
+              <div className='flex flex-col'>
+                <h3 className='hidden md:block text-xl md:pl-20 md:text-5xl font-bold  text-neutral-500 '>
+                  {item.title}
+                </h3>
+                <span className='hidden md:block text-md md:pl-20 md:text-3xl font-bold'>
+                  {item.company}
+                </span>
+                <span className='hidden md:block text-sm md:pl-20 md:text-xl font-bold'>
+                  {item.position}
+                </span>
+                <span className='hidden md:block text-sm md:pl-20 md:text-md font-bold'>
+                  {item.fullTime ? 'Full Time' : 'Part Time'}
+                </span>
+              </div>
             </div>
 
             <div className='relative pl-20 pr-4 md:pl-4 w-full'>
