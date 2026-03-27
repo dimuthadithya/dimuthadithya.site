@@ -5,10 +5,9 @@ import { cn } from '@/lib/utils';
 
 export const TracingBeam = ({ children, className }) => {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start start', 'end start'],
-  });
+  // Use window scroll so progress tracks the full page (0 → 1 from top to bottom),
+  // not just until this element's top edge leaves the viewport.
+  const { scrollYProgress } = useScroll();
 
   const contentRef = useRef(null);
   const [svgHeight, setSvgHeight] = useState(0);
@@ -36,14 +35,15 @@ export const TracingBeam = ({ children, className }) => {
   }, [children]);
 
   const y1 = useSpring(
-    useTransform(scrollYProgress, [0, 0.8], [50, svgHeight]),
+    useTransform(scrollYProgress, [0, 1], [50, svgHeight]),
     {
       stiffness: 500,
       damping: 90,
     },
   );
   const y2 = useSpring(
-    useTransform(scrollYProgress, [0, 1], [50, svgHeight - 200]),
+    // Slightly behind y1 so the gradient segment stays visible throughout the scroll
+    useTransform(scrollYProgress, [0.1, 1], [50, svgHeight]),
     {
       stiffness: 500,
       damping: 90,
