@@ -31,7 +31,7 @@ export default function HeroSection() {
           <AvatarCircles
             avatarUrls={[
               {
-                imageUrl: 'profile.png',
+                imageUrl: '/images/profile.png',
                 profileUrl: process.env.NEXT_PUBLIC_GITHUB_URL,
               },
             ]}
