@@ -53,7 +53,7 @@ export default function EducationSection() {
               Higher National Diploma
             </span>
             <h2 className='text-3xl font-playfair-display text-white mb-1'>
-              HND in Computing
+              HND in Information Technology
             </h2>
             <p className='text-neutral-400 font-inconsolata text-sm'>
               Completed · 2025
@@ -61,7 +61,9 @@ export default function EducationSection() {
           </div>
           <div className='flex items-center gap-2 bg-neutral-900 border border-neutral-700 rounded-full px-4 py-2'>
             <span className='w-2 h-2 rounded-full bg-green-400 animate-pulse' />
-            <span className='text-green-400 font-inconsolata text-sm'>Completed</span>
+            <span className='text-green-400 font-inconsolata text-sm'>
+              Completed
+            </span>
           </div>
         </div>
 
@@ -138,10 +140,14 @@ export default function EducationSection() {
               transition={{ duration: 0.4 }}
               className={`flex items-center gap-3 px-6 py-4 rounded-xl border ${item.border} ${item.bg}`}
             >
-              <span className={`text-4xl font-bold font-playfair-display ${item.color}`}>
+              <span
+                className={`text-4xl font-bold font-playfair-display ${item.color}`}
+              >
                 {item.grade}
               </span>
-              <span className={`font-inconsolata text-sm ${item.color} opacity-80`}>
+              <span
+                className={`font-inconsolata text-sm ${item.color} opacity-80`}
+              >
                 {item.label}
               </span>
             </motion.div>
