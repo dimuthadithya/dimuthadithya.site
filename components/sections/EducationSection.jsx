@@ -7,10 +7,58 @@ import SectionNextLink from '@/components/sections/SectionNextLink';
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const HND_SEMESTERS = [
-  { sem: 1, gpa: null, subjects: null },
-  { sem: 2, gpa: null, subjects: null },
-  { sem: 3, gpa: null, subjects: null },
-  { sem: 4, gpa: null, subjects: null },
+  {
+    sem: 1,
+    gpa: 3.45,
+    subjects: [
+      'Visual Application Programming',
+      'Web Design',
+      'Computer and Network Systems',
+      'Information Management and Information Systems',
+      'ICT Project (Individual)',
+      'Communication Skills',
+    ],
+  },
+  {
+    sem: 2,
+    gpa: 3.6,
+    subjects: [
+      'Fundamentals of Programming',
+      'Software Development ',
+      'System Analysis and Design',
+      'Data communication and Computer Networks',
+      'Principles of User Interface Design',
+      'ICT Project (Group)',
+      'Technical Writing',
+      'Human Value & Professional Ethics',
+    ],
+  },
+  {
+    sem: 3,
+    gpa: 3.72,
+    subjects: [
+      'Object Oriented Programming',
+      'Web Programming',
+      'Data Structures and Algorithms',
+      'Database Management Systems',
+      'Operating Systems',
+      'Information and Computer Security',
+      'Statistics for IT',
+    ],
+  },
+  {
+    sem: 4,
+    gpa: 3.8,
+    subjects: [
+      'Software Engineering',
+      'Software Quality Assurance',
+      'IT Project Management',
+      'Professional World',
+      'Programming Individual Project',
+      'Business Analysis Practice',
+      'Enterprise Architecture',
+    ],
+  },
 ];
 
 const AL_GRADES = [
