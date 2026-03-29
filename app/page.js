@@ -11,9 +11,13 @@ import HeroSection from '@/components/sections/HeroSection';
 import SelectedWorksSection from '@/components/sections/SelectedWorksSection';
 import WorkExperienceSection from '@/components/sections/WorkExperienceSection';
 import MyStackSection from '@/components/sections/MyStackSection';
+import GitHubStatsSection from '@/components/sections/GitHubStatsSection';
 import EducationSection from '@/components/sections/EducationSection';
 import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/sections/Footer';
+
+// Read cached GitHub data at build/request time (server-side import)
+import githubData from '@/data/github-data.json';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -49,6 +53,7 @@ export default function Home() {
               <SelectedWorksSection />
               <WorkExperienceSection />
               <MyStackSection />
+              <GitHubStatsSection data={githubData} />
               <EducationSection />
               <ContactSection />
               <Footer />

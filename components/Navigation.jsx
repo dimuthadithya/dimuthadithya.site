@@ -22,6 +22,7 @@ const navItems = [
   { label: 'Works', href: '#works' },
   { label: 'Experience', href: '#experience' },
   { label: 'Stack', href: '#stack' },
+  { label: 'GitHub', href: '#github' },
   { label: 'Education', href: '#education' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -31,6 +32,7 @@ const mobileLinks = [
   { label: 'Selected Works', href: '#works' },
   { label: 'Work Experience', href: '#experience' },
   { label: 'My Stack', href: '#stack' },
+  { label: 'GitHub Activity', href: '#github' },
   { label: 'Education', href: '#education' },
   { label: 'Contact', href: '#contact' },
 ];

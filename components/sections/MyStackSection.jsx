@@ -128,7 +128,7 @@ export default function MyStackSection() {
           <TechGrid key={cat.title} title={cat.title} items={cat.items} />
         ))}
       </motion.div>
-      <SectionNextLink label='my education' href='#education' />
+      <SectionNextLink label='Github Activity' href='#github' />
     </div>
   );
 }
