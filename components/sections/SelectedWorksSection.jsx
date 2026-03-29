@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { ShinyButton } from '@/components/ui/shiny-button';
 import { ArrowRight } from '@phosphor-icons/react';
 import SectionHeading from '@/components/sections/SectionHeading';
@@ -15,12 +16,14 @@ export default function SelectedWorksSection() {
       <SectionHeading highlightedWord='Selected' restText='Works' />
       <WobbleCardDemo />
       <div className='text-center my-10'>
-        <ShinyButton className={'bg-neutral-900 mt-4'}>
-          <div className='flex items-center gap-1'>
-            <span>view all projects</span>
-            <ArrowRight />
-          </div>
-        </ShinyButton>
+        <Link href='/projects'>
+          <ShinyButton className={'bg-neutral-900 mt-4'}>
+            <div className='flex items-center gap-1'>
+              <span>view all projects</span>
+              <ArrowRight />
+            </div>
+          </ShinyButton>
+        </Link>
         <SectionNextLink label='work experience' href='#experience' />
       </div>
     </div>
