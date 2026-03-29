@@ -17,7 +17,14 @@ import {
   SheetTitle,
 } from '@/components/ui/sheet';
 
-const navItems = ['Home', 'Projects', 'Framer', 'Contact', 'Resume'];
+const navItems = [
+  { label: 'Home', href: '#' },
+  { label: 'Works', href: '#works' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Stack', href: '#stack' },
+  { label: 'Education', href: '#education' },
+  { label: 'Contact', href: '#contact' },
+];
 
 const mobileLinks = [
   { label: 'Home', href: '#' },
@@ -26,7 +33,6 @@ const mobileLinks = [
   { label: 'My Stack', href: '#stack' },
   { label: 'Education', href: '#education' },
   { label: 'Contact', href: '#contact' },
-  { label: 'Resume', href: '#' },
 ];
 
 function Navigation() {
@@ -54,18 +60,18 @@ function Navigation() {
             '
           >
             {navItems.map((item, index) => (
-              <NavigationMenuItem key={item}>
+              <NavigationMenuItem key={item.label}>
                 <button
+                  key={item.label}
                   className={`
                     px-4 py-1.5 text-sm rounded-full transition-all
-                    ${
-                      index === 0
-                        ? 'bg-black text-white shadow-sm'
-                        : 'text-neutral-700 hover:bg-neutral-300'
+                    ${index === 0
+                      ? 'bg-black text-white shadow-sm'
+                      : 'text-neutral-700 hover:bg-neutral-300'
                     }
                   `}
                 >
-                  {item}
+                  <a href={item.href}>{item.label}</a>
                 </button>
               </NavigationMenuItem>
             ))}
