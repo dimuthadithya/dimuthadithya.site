@@ -1,11 +1,20 @@
+'use client';
 import React from 'react';
 import { Timeline } from '@/components/ui/timeline';
+import { LinkPreview } from '@/components/ui/link-preview';
 
 export default function TimelineDemo() {
   const data = [
     {
       title: '2025',
-      company: 'OXYMAI PVT LTD',
+      company: (
+        <LinkPreview
+          url='https://oxymai.com/'
+          className='font-bold text-neutral-100  transition-colors duration-200'
+        >
+          OXYMAI PVT LTD
+        </LinkPreview>
+      ),
       position: 'Web Development Intern',
       fullTime: true,
       content: (
