@@ -61,7 +61,7 @@ const BASE_HEADERS = {
 
 function fetchJson(url) {
   return new Promise((resolve, reject) => {
-    https
+    const req = https
       .get(url, { headers: BASE_HEADERS }, (res) => {
         if (res.statusCode === 403) {
           reject(new Error(`Rate limited (403) fetching ${url}. Set GITHUB_TOKEN to increase limits.`));
@@ -78,12 +78,15 @@ function fetchJson(url) {
         });
       })
       .on('error', reject);
+    req.setTimeout(10_000, () => {
+      req.destroy(new Error(`Request timed out: ${url}`));
+    });
   });
 }
 
 function fetchRaw(url) {
   return new Promise((resolve) => {
-    https
+    const req = https
       .get(url, { headers: { 'User-Agent': 'Node.js/fetch-github-script' } }, (res) => {
         if (res.statusCode !== 200) { resolve(null); return; }
         let data = '';
@@ -91,6 +94,10 @@ function fetchRaw(url) {
         res.on('end', () => resolve(data));
       })
       .on('error', () => resolve(null));
+    req.setTimeout(10_000, () => {
+      req.destroy();
+      resolve(null);
+    });
   });
 }
 
@@ -132,60 +139,57 @@ async function main() {
 
   console.log(`     Found ${allRepos.length} total repos. Filtering by tags: [${PROJECT_TAGS.join(', ')}]…\n`);
 
-  // 3. Filter + enrich each repo
-  const enriched = await Promise.all(
-    allRepos.map(async (repo) => {
-      // Fetch topics
-      const topicsData = await fetchJson(
-        `https://api.github.com/repos/${USERNAME}/${repo.name}/topics`
-      ).catch(() => ({ names: [] }));
+  // 3. Filter + enrich each repo (sequential to avoid rate-limiting)
+  const enriched = [];
+  for (const repo of allRepos) {
+    // Fetch topics
+    const topicsData = await fetchJson(
+      `https://api.github.com/repos/${USERNAME}/${repo.name}/topics`
+    ).catch(() => ({ names: [] }));
 
-      const topics = topicsData.names || [];
-      const hasMatchingTag = PROJECT_TAGS.some((tag) => topics.includes(tag));
+    const topics = topicsData.names || [];
+    const hasMatchingTag = PROJECT_TAGS.some((tag) => topics.includes(tag));
 
-      if (!hasMatchingTag) return null;
+    if (!hasMatchingTag) continue;
 
-      console.log(`  ✅  ${repo.name}  [${topics.join(', ')}]`);
+    console.log(`  ✅  ${repo.name}  [${topics.join(', ')}]`);
 
-      // Languages
-      const languages = await fetchJson(repo.languages_url).catch(() => ({}));
+    // Languages
+    const languages = await fetchJson(repo.languages_url).catch(() => ({}));
 
-      // README images
-      const readmeUrl = `https://raw.githubusercontent.com/${USERNAME}/${repo.name}/main/README.md`;
-      const readme = await fetchRaw(readmeUrl);
-      const images = extractImagesFromMarkdown(readme, repo.name);
+    // README images
+    const readmeUrl = `https://raw.githubusercontent.com/${USERNAME}/${repo.name}/main/README.md`;
+    const readme = await fetchRaw(readmeUrl);
+    const images = extractImagesFromMarkdown(readme, repo.name);
 
-      if (images.length) {
-        console.log(`       📷  ${images.length} image(s) found in README`);
-      }
+    if (images.length) {
+      console.log(`       📷  ${images.length} image(s) found in README`);
+    }
 
-      return {
-        id: repo.id,
-        name: repo.name,
-        full_name: repo.full_name,
-        description: repo.description,
-        html_url: repo.html_url,
-        homepage: repo.homepage,
-        topics,
-        languages,
-        stargazers_count: repo.stargazers_count,
-        forks_count: repo.forks_count,
-        watchers_count: repo.watchers_count,
-        open_issues_count: repo.open_issues_count,
-        size: repo.size,
-        default_branch: repo.default_branch,
-        created_at: repo.created_at,
-        updated_at: repo.updated_at,
-        pushed_at: repo.pushed_at,
-        is_fork: repo.fork,
-        archived: repo.archived,
-        card_image: images[0] || null,
-        readme_images: images,
-      };
-    })
-  );
-
-  const repos = enriched.filter(Boolean);
+    enriched.push({
+      id: repo.id,
+      name: repo.name,
+      full_name: repo.full_name,
+      description: repo.description,
+      html_url: repo.html_url,
+      homepage: repo.homepage,
+      topics,
+      languages,
+      stargazers_count: repo.stargazers_count,
+      forks_count: repo.forks_count,
+      watchers_count: repo.watchers_count,
+      open_issues_count: repo.open_issues_count,
+      size: repo.size,
+      default_branch: repo.default_branch,
+      created_at: repo.created_at,
+      updated_at: repo.updated_at,
+      pushed_at: repo.pushed_at,
+      is_fork: repo.fork,
+      archived: repo.archived,
+      card_image: images[0] || null,
+      readme_images: images,
+    });
+  }
 
   // 4. Aggregate stats
   const stats = {
