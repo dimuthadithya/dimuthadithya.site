@@ -42,8 +42,12 @@ function Navigation() {
       <PointerHighlight className=''>
         <div className='flex flex-col text-sm capitalize'>
           <span className='hidden sm:block'>Dimuth Adithya</span>
-          <span className='sm:hidden font-bold text-base tracking-tight'>DA</span>
-          <span className='-mt-1 text-neutral-300 hidden sm:block'>Full stack developer</span>
+          <span className='sm:hidden font-bold text-base tracking-tight'>
+            DA
+          </span>
+          <span className='-mt-1 text-neutral-300 hidden sm:block'>
+            Full stack developer
+          </span>
         </div>
       </PointerHighlight>
 
@@ -65,9 +69,10 @@ function Navigation() {
                   key={item.label}
                   className={`
                     px-4 py-1.5 text-sm rounded-full transition-all
-                    ${index === 0
-                      ? 'bg-black text-white shadow-sm'
-                      : 'text-neutral-700 hover:bg-neutral-300'
+                    ${
+                      index === 0
+                        ? 'bg-black text-white shadow-sm'
+                        : 'text-neutral-700 hover:bg-neutral-300'
                     }
                   `}
                 >
@@ -81,7 +86,7 @@ function Navigation() {
 
       {/* Desktop CTA */}
       <div className='hidden sm:block'>
-        <span className='flex items-center font-inconsolata hover:opacity-100 transition-opacity hover:text-green-400 duration-200 cursor-pointer'>
+        <span className='flex items-center font-inconsolata hover:opacity-100 transition-opacity hover:text-red-600 duration-200 cursor-pointer'>
           <TextAnimate animation='scaleUp' by='text' delay={1}>
             <span>Let&apos;s Talk</span>
           </TextAnimate>
@@ -114,7 +119,9 @@ function Navigation() {
                 <SheetTitle className='text-white text-sm font-medium tracking-tight font-inconsolata'>
                   Dimuth Adithya
                 </SheetTitle>
-                <span className='text-neutral-400 text-xs'>Full stack developer</span>
+                <span className='text-neutral-400 text-xs'>
+                  Full stack developer
+                </span>
               </div>
               <SheetClose asChild>
                 <button
@@ -135,7 +142,9 @@ function Navigation() {
                     className='group flex items-center justify-between py-3 border-b border-neutral-900 text-neutral-300 hover:text-white transition-colors duration-200'
                     style={{ animationDelay: `${i * 40}ms` }}
                   >
-                    <span className='text-base font-inconsolata'>{link.label}</span>
+                    <span className='text-base font-inconsolata'>
+                      {link.label}
+                    </span>
                     <ArrowUpRightIcon
                       size={16}
                       className='opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-green-400'
