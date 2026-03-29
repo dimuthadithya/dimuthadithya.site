@@ -37,12 +37,13 @@ export default function HeroSection() {
             ]}
           />
           <div className='flex flex-wrap items-center gap-3 mb-3'>
-            <h1 className='tracking-tight'>
+            <h1 className='tracking-tight' aria-label="Hey, I'm Dimuth.">
               <TextAnimate
                 animation='blurInUp'
                 by='character'
                 once={true}
                 duration={1}
+                aria-hidden='true'
                 className={'text-3xl sm:text-4xl lg:text-5xl'}
               >
                 Hey, I&apos;m Dimuth.
