@@ -41,9 +41,9 @@ export default function ContactSection() {
         >
           <a
             href='mailto:dimuthadithya01@gmail.com'
-            className='hover:text-white transition-colors duration-200 flex items-center gap-2 group'
+            className='hover:text-red-600 transition-colors duration-200 flex items-center gap-2 group'
           >
-            <span className='w-4 h-px bg-neutral-600 group-hover:bg-neutral-300 transition-colors duration-200' />
+            <span className='w-4 h-px bg-neutral-600 group-hover:bg-red-600 transition-colors duration-200' />
             dimuthadithya01@gmail.com
           </a>
         </motion.div>

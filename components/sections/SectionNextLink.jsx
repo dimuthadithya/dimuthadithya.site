@@ -11,7 +11,7 @@ import { ArrowDownLeft } from '@phosphor-icons/react';
  */
 export default function SectionNextLink({ label, href = '#' }) {
   return (
-    <div className='hidden sm:flex justify-end items-center opacity-80 hover:opacity-100 transition-opacity hover:text-green-400 duration-200 cursor-pointer mb-2 capitalize font-inconsolata mt-10 text-sm w-full'>
+    <div className='hidden sm:flex justify-end items-center opacity-80 hover:opacity-100 transition-opacity hover:text-red-600 duration-200 cursor-pointer mb-2 capitalize font-inconsolata mt-10 text-sm w-full'>
       <a href={href} className='flex items-center gap-1'>
         <span className='me-1'>{label}</span>
         <ArrowDownLeft />

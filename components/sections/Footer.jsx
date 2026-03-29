@@ -46,7 +46,7 @@ export default function Footer() {
             <a
               key={link.label}
               href={link.href}
-              className='text-neutral-500 text-sm hover:text-white transition-colors duration-200 w-fit'
+              className='text-neutral-500 text-sm hover:text-red-600 transition-colors duration-200 w-fit'
             >
               {link.label}
             </a>
@@ -64,9 +64,9 @@ export default function Footer() {
               href={link.href}
               target='_blank'
               rel='noopener noreferrer'
-              className='text-neutral-500 text-sm hover:text-white transition-colors duration-200 w-fit flex items-center gap-2 group'
+              className='text-neutral-500 text-sm hover:text-red-600 transition-colors duration-200 w-fit flex items-center gap-2 group'
             >
-              <span className='w-3 h-px bg-neutral-700 group-hover:w-5 group-hover:bg-white transition-all duration-200' />
+              <span className='w-3 h-px bg-neutral-700 group-hover:w-5 group-hover:bg-red-600 transition-all duration-200' />
               {link.label}
             </a>
           ))}

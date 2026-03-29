@@ -59,7 +59,7 @@ export default function HeroSection() {
 
         {/* Bottom row */}
         <div className='lg:h-30 text-xl sm:text-2xl lg:text-3xl'>
-          <div className='text-neutral-400 hover:text-neutral-50 transition-colors duration-100 flex flex-wrap items-center gap-x-2'>
+          <div className='text-neutral-400 hover:text-red-600 transition-colors duration-100 flex flex-wrap items-center gap-x-2'>
             I build products that are
             <span className='text-white ms-2'>
               <WordRotate
@@ -102,7 +102,7 @@ export default function HeroSection() {
             </motion.span>
           </motion.div>
 
-          <div className='hidden sm:flex justify-end items-center opacity-80 hover:opacity-100 transition-opacity hover:text-green-400 duration-200 cursor-pointer mb-2 w-fit'>
+          <div className='hidden sm:flex justify-end items-center opacity-80 hover:opacity-100 transition-opacity hover:text-red-600 duration-200 cursor-pointer mb-2 w-fit'>
             <span className='me-1'>see selected works</span>
             <ArrowDownLeft />
           </div>
