@@ -66,13 +66,8 @@ export default function HeroSection() {
         <div className='lg:h-30 text-xl sm:text-2xl lg:text-3xl'>
           <div className='text-neutral-400 hover:text-red-600 transition-colors duration-100 flex flex-wrap items-center gap-x-2'>
             I build products that are
-            <span className='text-white ms-2'>
-              <WordRotate
-                words={[
-                  'scalable.',
-                  'impactful.',
-                ]}
-              />
+            <span className='text-white'>
+              <WordRotate words={['scalable.', 'impactful.']} />
             </span>
           </div>
           <ShinyButton className={'bg-neutral-900 mt-4'}>
