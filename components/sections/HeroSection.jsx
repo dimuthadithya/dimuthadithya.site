@@ -48,18 +48,15 @@ export default function HeroSection() {
                 Hey, I&apos;m Dimuth.
               </TextAnimate>
             </h1>
-            {/* Open to Work badge */}
-            <span className='flex items-center gap-1.5 text-xs font-inconsolata font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full border border-green-700 bg-green-950/60 text-green-400 animate-pulse-slow'>
-              <span className='w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse inline-block' />
-              Open to Work
-            </span>
           </div>
           <h2 className='text-xl sm:text-2xl lg:text-4xl leading-snug'>
             Full-stack developer building{' '}
-            <span className='text-neutral-400'>web apps &amp; Chrome extensions</span>
-            {' '}that simplify everyday workflows. I also{' '}
-            <span className='text-neutral-400'>teach programming online</span>
-            , helping students go from zero to{' '}
+            <span className='text-neutral-400'>
+              web apps &amp; Chrome extensions
+            </span>{' '}
+            that simplify everyday workflows. I also{' '}
+            <span className='text-neutral-400'>teach programming online</span>,
+            helping students go from zero to{' '}
             <span className='text-neutral-400'>job-ready.</span>
           </h2>
         </div>
