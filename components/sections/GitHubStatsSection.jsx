@@ -114,6 +114,23 @@ export default function GitHubStatsSection({ data }) {
         <StatCard icon={Users}   label='Followers'    value={stats.followers}     delay={0.15} />
       </div>
 
+      {/* View all projects CTA */}
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4, delay: 0.2 }}
+        className='mt-6 flex justify-end'
+      >
+        <Link
+          href='/projects'
+          className='inline-flex items-center gap-2 font-inconsolata text-sm text-neutral-400 hover:text-white border border-neutral-800 hover:border-neutral-600 rounded-full px-5 py-2 transition-all duration-200 group'
+        >
+          View all {stats.total_repos} projects
+          <ArrowUpRight size={14} className='group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform' />
+        </Link>
+      </motion.div>
+
       <SectionNextLink label='education' href='#education' />
     </div>
   );

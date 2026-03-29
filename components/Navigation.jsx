@@ -22,7 +22,6 @@ const navItems = [
   { label: 'Works', href: '#works' },
   { label: 'Experience', href: '#experience' },
   { label: 'Stack', href: '#stack' },
-  { label: 'GitHub', href: '#github' },
   { label: 'Education', href: '#education' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -71,10 +70,9 @@ function Navigation() {
                   key={item.label}
                   className={`
                     px-4 py-1.5 text-sm rounded-full transition-all
-                    ${
-                      index === 0
-                        ? 'bg-black text-white shadow-sm'
-                        : 'text-neutral-700 hover:bg-neutral-300'
+                    ${index === 0
+                      ? 'bg-black text-white shadow-sm'
+                      : 'text-neutral-700 hover:bg-neutral-300'
                     }
                   `}
                 >
