@@ -36,7 +36,7 @@ export default function Home() {
         {!isLoading && (
           <TracingBeam>
             <motion.div
-              className='flex flex-col text-white font-playfair-display pl-8 pr-4 sm:px-8 lg:px-20 pt-6 sm:pt-10 select-none max-w-5xl mx-auto relative'
+              className='flex flex-col text-white font-playfair-display pl-4 pr-8 sm:px-8 lg:px-20 pt-6 sm:pt-10 select-none max-w-5xl mx-auto relative'
               initial={{ y: '100vh', opacity: 0 }}
               animate={{ y: '0vh', opacity: 1 }}
               transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}

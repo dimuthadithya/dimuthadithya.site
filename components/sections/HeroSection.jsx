@@ -19,9 +19,9 @@ export default function HeroSection() {
   const y = useTransform(scrollY, [0, 50], [0, 20]);
 
   return (
-    <div className='h-[94vh] flex flex-col'>
+    <div className='flex flex-col sm:h-[94vh]'>
       {/* Navigation */}
-      <div className='mb-20'>
+      <div className='mb-6 sm:mb-20'>
         <Navigation />
       </div>
 
@@ -70,7 +70,6 @@ export default function HeroSection() {
                 words={[
                   'scalable.',
                   'user-focused.',
-                  'high-performance.',
                   'impactful.',
                 ]}
               />
