@@ -8,6 +8,7 @@ export default function Footer() {
   const navLinks = [
     { label: 'Selected Works', href: '#works' },
     { label: 'Work Experience', href: '#experience' },
+    { label: 'Teaching & Mentoring', href: '#teaching' },
     { label: 'My Stack', href: '#stack' },
     { label: 'Education', href: '#education' },
     { label: 'Contact', href: '#contact' },
@@ -15,8 +16,7 @@ export default function Footer() {
 
   const socialLinks = [
     { label: 'GitHub', href: process.env.NEXT_PUBLIC_GITHUB_URL },
-    { label: 'LinkedIn', href: '#' },
-    { label: 'Twitter / X', href: '#' },
+    { label: 'LinkedIn', href: process.env.NEXT_PUBLIC_LINKEDIN_URL },
   ];
 
   return (

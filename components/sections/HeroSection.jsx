@@ -36,24 +36,31 @@ export default function HeroSection() {
               },
             ]}
           />
-          <h1 className='tracking-tight'>
-            <TextAnimate
-              animation='blurInUp'
-              by='character'
-              once={true}
-              duration={1}
-              className={'mb-3 text-3xl sm:text-4xl lg:text-5xl'}
-            >
-              Hey, I&apos;m Dimuth.
-            </TextAnimate>
-          </h1>
+          <div className='flex flex-wrap items-center gap-3 mb-3'>
+            <h1 className='tracking-tight'>
+              <TextAnimate
+                animation='blurInUp'
+                by='character'
+                once={true}
+                duration={1}
+                className={'text-3xl sm:text-4xl lg:text-5xl'}
+              >
+                Hey, I&apos;m Dimuth.
+              </TextAnimate>
+            </h1>
+            {/* Open to Work badge */}
+            <span className='flex items-center gap-1.5 text-xs font-inconsolata font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full border border-green-700 bg-green-950/60 text-green-400 animate-pulse-slow'>
+              <span className='w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse inline-block' />
+              Open to Work
+            </span>
+          </div>
           <h2 className='text-xl sm:text-2xl lg:text-4xl leading-snug'>
-            I specialize in building modern web applications, taking products
-            from <span className='text-neutral-400'>zero to one</span>. Over the
-            past 3+ years, I&apos;ve crafted scalable{' '}
-            <span className='text-neutral-400'>B2B &amp; B2C </span>
-            solutions that drive real business{' '}
-            <span className='text-neutral-400'>impact.</span>
+            Full-stack developer building{' '}
+            <span className='text-neutral-400'>web apps &amp; Chrome extensions</span>
+            {' '}that simplify everyday workflows. I also{' '}
+            <span className='text-neutral-400'>teach programming online</span>
+            , helping students go from zero to{' '}
+            <span className='text-neutral-400'>job-ready.</span>
           </h2>
         </div>
 

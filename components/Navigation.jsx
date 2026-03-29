@@ -30,6 +30,7 @@ const mobileLinks = [
   { label: 'Home', href: '#' },
   { label: 'Selected Works', href: '#works' },
   { label: 'Work Experience', href: '#experience' },
+  { label: 'Teaching & Mentoring', href: '#teaching' },
   { label: 'My Stack', href: '#stack' },
   { label: 'GitHub Activity', href: '#github' },
   { label: 'Education', href: '#education' },
@@ -165,8 +166,7 @@ function Navigation() {
               <div className='flex items-center gap-4'>
                 {[
                   { label: 'GitHub', href: process.env.NEXT_PUBLIC_GITHUB_URL },
-                  { label: 'LinkedIn', href: '#' },
-                  { label: 'Twitter', href: '#' },
+                  { label: 'LinkedIn', href: process.env.NEXT_PUBLIC_LINKEDIN_URL },
                 ].map((s) => (
                   <a
                     key={s.label}

@@ -46,6 +46,15 @@ export default function ContactSection() {
             <span className='w-4 h-px bg-neutral-600 group-hover:bg-red-600 transition-colors duration-200' />
             dimuthadithya01@gmail.com
           </a>
+          <a
+            href={process.env.NEXT_PUBLIC_LINKEDIN_URL}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='hover:text-blue-400 transition-colors duration-200 flex items-center gap-2 group'
+          >
+            <span className='w-4 h-px bg-neutral-600 group-hover:bg-blue-400 transition-colors duration-200' />
+            LinkedIn
+          </a>
         </motion.div>
       </motion.div>
     </div>

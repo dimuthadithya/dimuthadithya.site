@@ -12,7 +12,7 @@ export default function WorkExperienceSection() {
     <div id='experience'>
       <SectionHeading highlightedWord='work' restText='experience' />
       <TimelineDemo />
-      <SectionNextLink label='my stack' href='#stack' />
+      <SectionNextLink label='teaching & mentoring' href='#teaching' />
     </div>
   );
 }

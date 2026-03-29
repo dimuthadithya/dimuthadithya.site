@@ -10,6 +10,7 @@ import LoadingScreen from '@/components/sections/LoadingScreen';
 import HeroSection from '@/components/sections/HeroSection';
 import SelectedWorksSection from '@/components/sections/SelectedWorksSection';
 import WorkExperienceSection from '@/components/sections/WorkExperienceSection';
+import TeachingSection from '@/components/sections/TeachingSection';
 import MyStackSection from '@/components/sections/MyStackSection';
 import GitHubStatsSection from '@/components/sections/GitHubStatsSection';
 import EducationSection from '@/components/sections/EducationSection';
@@ -52,6 +53,7 @@ export default function Home() {
               <HeroSection />
               <SelectedWorksSection />
               <WorkExperienceSection />
+              <TeachingSection />
               <MyStackSection />
               <GitHubStatsSection data={githubData} />
               <EducationSection />
