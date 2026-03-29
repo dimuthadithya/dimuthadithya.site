@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { CoolMode } from '@/components/ui/cool-mode';
 import { Button } from '@/components/ui/button';
 import { TracingBeam } from '@/components/ui/tracing-beam';
+import { FloatingScrollTop } from '@/components/ui/scroll-to-top';
 
 import LoadingScreen from '@/components/sections/LoadingScreen';
 import HeroSection from '@/components/sections/HeroSection';
@@ -49,6 +50,9 @@ export default function Home() {
                   </Button>
                 </CoolMode>
               </div>
+
+              {/* Floating scroll-to-top — desktop only, hides when footer visible */}
+              <FloatingScrollTop />
 
               <HeroSection />
               <SelectedWorksSection />

@@ -1,5 +1,7 @@
 'use client';
 
+import { FooterScrollTop } from '@/components/ui/scroll-to-top';
+
 /**
  * Site footer with brand info, navigation links, social links, copyright,
  * and the large watermark signature.
@@ -78,9 +80,12 @@ export default function Footer() {
         <span className='text-neutral-600 text-xs'>
           © 2026 Dimuth Aditya. All rights reserved.
         </span>
-        <span className='text-neutral-700 text-xs'>
-          Built with Next.js · Framer Motion · Deployed on Vercel
-        </span>
+        <div className='flex items-center gap-6'>
+          <span className='text-neutral-700 text-xs'>
+            Built with Next.js · Framer Motion · Deployed on Vercel
+          </span>
+          <FooterScrollTop />
+        </div>
       </div>
 
 
