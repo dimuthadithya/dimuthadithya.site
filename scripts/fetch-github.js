@@ -191,6 +191,8 @@ async function main() {
     });
   }
 
+  const repos = enriched;
+
   // 4. Aggregate stats
   const stats = {
     total_repos: repos.length,
