@@ -2,9 +2,14 @@
 
 import Link from 'next/link';
 import * as motion from 'motion/react-client';
+import { useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 import { TextAnimate } from '@/components/ui/text-animate';
 import { NumberTicker } from '@/components/ui/number-ticker';
-import { ArrowLeft, ArrowUpRight, Star, GitFork, Globe, Code } from '@phosphor-icons/react';
+import {
+  ArrowLeft, ArrowUpRight, Star, GitFork,
+  Globe, Code, Envelope,
+} from '@phosphor-icons/react';
 import githubData from '@/data/github-data.json';
 
 // ─── Language colour map ──────────────────────────────────────────────────────
@@ -21,6 +26,22 @@ function getTopLanguage(languages) {
   return Object.entries(languages).sort(([, a], [, b]) => b - a)[0][0];
 }
 
+// ─── Scroll-animated section wrapper ─────────────────────────────────────────
+function FadeUp({ children, delay = 0, className = '' }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.55, delay, ease: [0.25, 1, 0.5, 1] }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+// ─── Project card ─────────────────────────────────────────────────────────────
 function ProjectCard({ repo, index }) {
   const topLang   = getTopLanguage(repo.languages);
   const langColor = LANG_COLORS[topLang] || '#555';
@@ -31,12 +52,13 @@ function ProjectCard({ repo, index }) {
       target='_blank'
       rel='noopener noreferrer'
       initial={{ opacity: 0, y: 28 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.04, ease: [0.25, 1, 0.5, 1] }}
-      className='group relative flex flex-col rounded-2xl border border-neutral-800 bg-neutral-900/60 hover:border-neutral-600 hover:bg-neutral-900 transition-all duration-300 overflow-hidden'
-      style={{ backdropFilter: 'blur(8px)' }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.45, delay: (index % 3) * 0.08, ease: [0.25, 1, 0.5, 1] }}
+      whileHover={{ y: -4 }}
+      className='group relative flex flex-col rounded-2xl border border-neutral-800 bg-neutral-900/60 hover:border-neutral-600 hover:bg-neutral-900 transition-colors duration-300 overflow-hidden'
     >
-      {/* Screenshot */}
+      {/* Screenshot / placeholder */}
       {repo.card_image ? (
         <div className='relative w-full h-44 overflow-hidden border-b border-neutral-800'>
           <img
@@ -45,28 +67,24 @@ function ProjectCard({ repo, index }) {
             className='w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500'
             loading='lazy'
           />
-          {/* Gradient overlay */}
-          <div className='absolute inset-0 bg-gradient-to-t from-neutral-900/80 to-transparent' />
-          {/* Arrow indicator */}
-          <div className='absolute top-3 right-3 w-7 h-7 rounded-full bg-neutral-900/80 border border-neutral-700 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200'>
-            <ArrowUpRight size={14} className='text-white' />
+          <div className='absolute inset-0 bg-gradient-to-t from-neutral-900/70 to-transparent' />
+          <div className='absolute top-3 right-3 w-7 h-7 rounded-full bg-black/60 border border-neutral-700 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity'>
+            <ArrowUpRight size={13} className='text-white' />
           </div>
         </div>
       ) : (
-        /* Placeholder if no image */
         <div className='relative w-full h-28 border-b border-neutral-800 bg-neutral-950 flex items-center justify-center'>
-          <Code size={32} className='text-neutral-800' />
-          <div className='absolute top-3 right-3 w-7 h-7 rounded-full bg-neutral-900/80 border border-neutral-700 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200'>
-            <ArrowUpRight size={14} className='text-white' />
+          <Code size={28} className='text-neutral-800' />
+          <div className='absolute top-3 right-3 w-7 h-7 rounded-full bg-black/60 border border-neutral-700 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity'>
+            <ArrowUpRight size={13} className='text-white' />
           </div>
         </div>
       )}
 
-      {/* Content */}
+      {/* Body */}
       <div className='flex flex-col gap-2.5 p-4 flex-1'>
-        {/* Title */}
         <div className='flex items-center justify-between gap-2'>
-          <h2 className='text-white font-semibold text-sm leading-snug group-hover:text-neutral-200 transition-colors truncate'>
+          <h2 className='text-white font-semibold text-sm leading-snug truncate'>
             {repo.name}
           </h2>
           {repo.is_fork && (
@@ -76,28 +94,29 @@ function ProjectCard({ repo, index }) {
           )}
         </div>
 
-        {/* Description */}
         {repo.description && (
           <p className='text-neutral-500 text-xs leading-relaxed line-clamp-2 font-inconsolata'>
             {repo.description}
           </p>
         )}
 
-        {/* Tags */}
         {repo.topics?.length > 0 && (
-          <div className='flex flex-wrap gap-1 mt-auto'>
-            {repo.topics.filter(t => t !== 'project' && t !== 'showcase' && t !== 'portfolio').slice(0, 5).map(tag => (
-              <span
-                key={tag}
-                className='text-[10px] font-inconsolata px-2 py-0.5 rounded-full bg-neutral-950 border border-neutral-800 text-neutral-500'
-              >
-                {tag}
-              </span>
-            ))}
+          <div className='flex flex-wrap gap-1 mt-1'>
+            {repo.topics
+              .filter(t => !['project', 'showcase', 'portfolio'].includes(t))
+              .slice(0, 5)
+              .map(tag => (
+                <span
+                  key={tag}
+                  className='text-[10px] font-inconsolata px-2 py-0.5 rounded-full bg-neutral-950 border border-neutral-800 text-neutral-600'
+                >
+                  {tag}
+                </span>
+              ))}
           </div>
         )}
 
-        {/* Footer meta */}
+        {/* Meta footer */}
         <div className='flex items-center gap-3 pt-3 mt-auto border-t border-neutral-800/60 text-[11px] font-inconsolata text-neutral-600'>
           {topLang && (
             <span className='flex items-center gap-1.5'>
@@ -113,8 +132,8 @@ function ProjectCard({ repo, index }) {
           )}
           {repo.homepage && (
             <span
-              onClick={(e) => { e.preventDefault(); window.open(repo.homepage, '_blank'); }}
-              className='ml-auto flex items-center gap-1 hover:text-white transition-colors cursor-pointer'
+              onClick={e => { e.preventDefault(); window.open(repo.homepage, '_blank'); }}
+              className='ml-auto flex items-center gap-1 hover:text-white transition-colors'
             >
               <Globe size={11} /> Live
             </span>
@@ -125,6 +144,7 @@ function ProjectCard({ repo, index }) {
   );
 }
 
+// ─── Stat pill ────────────────────────────────────────────────────────────────
 function StatPill({ label, value }) {
   return (
     <div className='flex items-center gap-2 font-inconsolata text-sm text-neutral-500 border border-neutral-800 rounded-full px-4 py-1.5 bg-neutral-950'>
@@ -136,13 +156,18 @@ function StatPill({ label, value }) {
   );
 }
 
+// ─── Page ─────────────────────────────────────────────────────────────────────
 export default function ProjectsPage() {
   const { repos = [], stats, profile } = githubData;
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
+  const heroY   = useTransform(scrollYProgress, [0, 1], ['0%', '25%']);
+  const heroOp  = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   return (
     <main className='min-h-screen bg-neutral-950 text-white font-playfair-display'>
 
-      {/* Top bar */}
+      {/* ── Sticky top bar ──────────────────────────────────────────────── */}
       <div className='sticky top-0 z-40 border-b border-neutral-800/60 bg-neutral-950/80 backdrop-blur-md'>
         <div className='max-w-6xl mx-auto px-4 sm:px-8 lg:px-16 py-3 flex items-center justify-between'>
           <Link
@@ -163,17 +188,22 @@ export default function ProjectsPage() {
         </div>
       </div>
 
-      <div className='max-w-6xl mx-auto px-4 sm:px-8 lg:px-16 py-16'>
+      {/* ── Parallax hero ───────────────────────────────────────────────── */}
+      <section ref={heroRef} className='relative min-h-[55vh] flex items-end border-b border-neutral-800 overflow-hidden'>
+        {/* Radial glow */}
+        <div className='absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(255,255,255,0.04),transparent)] pointer-events-none' />
 
-        {/* Hero header */}
-        <div className='mb-12'>
+        <motion.div
+          style={{ y: heroY, opacity: heroOp }}
+          className='relative z-10 max-w-6xl mx-auto px-4 sm:px-8 lg:px-16 pb-16 pt-24 w-full'
+        >
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className='font-inconsolata text-xs text-neutral-600 uppercase tracking-widest mb-4'
+            className='font-inconsolata text-xs text-neutral-600 uppercase tracking-widest mb-5'
           >
-            Open Source Work
+            Open Source · {repos.length} projects
           </motion.p>
 
           <TextAnimate
@@ -186,40 +216,79 @@ export default function ProjectsPage() {
             all projects
           </TextAnimate>
 
-          {/* Stat pills */}
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.35 }}
             className='flex flex-wrap gap-2'
           >
-            <StatPill value={repos.length}        label='projects' />
-            <StatPill value={stats.total_stars}   label='stars'    />
-            <StatPill value={stats.total_forks}   label='forks'    />
-            <StatPill value={stats.followers}     label='followers' />
+            <StatPill value={repos.length}      label='projects'  />
+            <StatPill value={stats.total_stars} label='stars'     />
+            <StatPill value={stats.total_forks} label='forks'     />
+            <StatPill value={stats.followers}   label='followers' />
           </motion.div>
-        </div>
+        </motion.div>
+      </section>
 
-        {/* Divider */}
-        <div className='border-t border-neutral-800 mb-10' />
-
-        {/* Grid */}
+      {/* ── Projects grid ───────────────────────────────────────────────── */}
+      <section className='max-w-6xl mx-auto px-4 sm:px-8 lg:px-16 py-16'>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
           {repos.map((repo, i) => (
             <ProjectCard key={repo.id} repo={repo} index={i} />
           ))}
         </div>
+      </section>
 
-        {/* Footer */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className='text-center text-neutral-700 text-xs font-inconsolata mt-16 pb-8'
-        >
-          Cached {new Date(stats.updated_at).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} · auto-refreshes daily via GitHub Actions
-        </motion.p>
-      </div>
+      {/* ── Project idea CTA ────────────────────────────────────────────── */}
+      <section className='border-t border-neutral-800 bg-neutral-900/30'>
+        <div className='max-w-6xl mx-auto px-4 sm:px-8 lg:px-16 py-24 text-center'>
+          <FadeUp>
+            <p className='font-inconsolata text-xs text-neutral-600 uppercase tracking-widest mb-4'>
+              Got a project idea?
+            </p>
+            <h2 className='text-3xl sm:text-4xl lg:text-5xl mb-6'>
+              Let&apos;s build it together.
+            </h2>
+            <p className='text-neutral-500 text-sm font-inconsolata max-w-md mx-auto mb-10 leading-relaxed'>
+              Whether it&apos;s a side project, a startup idea, or something you&apos;ve been sitting on — drop me an email and let&apos;s figure it out.
+            </p>
+            <motion.a
+              href='mailto:dimuthadithya01@gmail.com'
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className='inline-flex items-center gap-3 font-inconsolata text-sm bg-white text-black px-7 py-3 rounded-full hover:bg-neutral-100 transition-colors duration-200'
+            >
+              <Envelope size={16} weight='bold' />
+              dimuthadithya01@gmail.com
+            </motion.a>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* ── Footer ──────────────────────────────────────────────────────── */}
+      <footer className='border-t border-neutral-800'>
+        <div className='max-w-6xl mx-auto px-4 sm:px-8 lg:px-16 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-inconsolata text-xs text-neutral-700'>
+          <span>© {new Date().getFullYear()} Dimuth Adithya. All rights reserved.</span>
+          <span>
+            Data cached{' '}
+            {new Date(stats.updated_at).toLocaleDateString('en-US', {
+              month: 'short', day: 'numeric', year: 'numeric',
+            })}{' '}
+            · auto-refreshes daily via GitHub Actions
+          </span>
+          <div className='flex items-center gap-4'>
+            <Link href='/' className='hover:text-white transition-colors'>Home</Link>
+            <Link
+              href={profile.html_url}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='hover:text-white transition-colors flex items-center gap-1'
+            >
+              GitHub <ArrowUpRight size={11} />
+            </Link>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
