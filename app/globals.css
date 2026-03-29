@@ -149,3 +149,11 @@
 .font-playfair-display {
   font-family: var(--font-playfair-display);
 }
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
