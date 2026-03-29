@@ -83,28 +83,7 @@ export default function Footer() {
         </span>
       </div>
 
-      {/* Watermark signature */}
-      <div className='relative overflow-hidden h-48 w-full -mx-8 mt-6'>
-        <span
-          className='absolute inset-0 flex items-center select-none pointer-events-none'
-          style={{
-            fontSize: 'clamp(5rem, 18vw, 14rem)',
-            fontWeight: 800,
-            fontFamily: 'sans-serif',
-            letterSpacing: '-0.04em',
-            whiteSpace: 'nowrap',
-            color: 'transparent',
-            WebkitTextStroke: '0px',
-            background: 'linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            lineHeight: 1,
-          }}
-        >
-          Dimuth
-        </span>
-      </div>
+
     </footer>
   );
 }
