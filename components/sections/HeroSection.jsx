@@ -69,7 +69,6 @@ export default function HeroSection() {
               <WordRotate
                 words={[
                   'scalable.',
-                  'user-focused.',
                   'impactful.',
                 ]}
               />
