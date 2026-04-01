@@ -9,7 +9,7 @@ import SectionNextLink from '@/components/sections/SectionNextLink';
 const HND_SEMESTERS = [
   {
     sem: 1,
-    gpa: 3.45,
+    gpa: 3.93,
     subjects: [
       'Visual Application Programming',
       'Web Design',
@@ -20,6 +20,7 @@ const HND_SEMESTERS = [
     ],
   },
   {
+    //check and change later other sememestre verified 
     sem: 2,
     gpa: 3.6,
     subjects: [
@@ -35,7 +36,7 @@ const HND_SEMESTERS = [
   },
   {
     sem: 3,
-    gpa: 3.72,
+    gpa: 3.87,
     subjects: [
       'Object Oriented Programming',
       'Web Programming',
@@ -48,7 +49,7 @@ const HND_SEMESTERS = [
   },
   {
     sem: 4,
-    gpa: 3.8,
+    gpa: 3.96,
     subjects: [
       'Software Engineering',
       'Software Quality Assurance',
