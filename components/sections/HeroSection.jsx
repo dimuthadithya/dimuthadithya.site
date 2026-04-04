@@ -70,12 +70,14 @@ export default function HeroSection() {
               <WordRotate words={['scalable.', 'impactful.']} />
             </span>
           </div>
-          <ShinyButton className={'bg-neutral-900 mt-4'}>
-            <div className='flex items-center gap-1'>
-              <span>Resume</span>
-              <ArrowDownIcon />
-            </div>
-          </ShinyButton>
+          <a href='/Dimuth_Adithya.pdf' download className='inline-block'>
+            <ShinyButton className={'bg-neutral-900 mt-4'}>
+              <div className='flex items-center gap-1'>
+                <span>Resume</span>
+                <ArrowDownIcon />
+              </div>
+            </ShinyButton>
+          </a>
         </div>
 
         {/* Scroll hint + "see selected works" */}
