@@ -8,6 +8,7 @@ import * as motion from 'motion/react-client';
  * @param {string}   title   – category heading, e.g. "Frontend"
  * @param {Array}    items   – array of { name, icon?, svg? }
  *                             If `icon` is provided, loads from skillicons.dev.
+ *                             If `src` is provided, renders the image from that path.
  *                             If `svg` is provided, renders the svg inside a styled box.
  */
 export default function TechGrid({ title, items }) {
@@ -29,6 +30,8 @@ export default function TechGrid({ title, items }) {
               <div className='w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center border border-neutral-800'>
                 {tech.svg}
               </div>
+            ) : tech.src ? (
+              <img src={tech.src} alt={tech.name} className='w-14 h-14' />
             ) : (
               <img
                 src={`${process.env.NEXT_PUBLIC_ICON_URL.split('?')[0]}?i=${tech.icon}`}
