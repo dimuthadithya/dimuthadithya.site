@@ -36,6 +36,42 @@
   },
   "repos": [
     {
+      "id": 838218480,
+      "name": "sliateBatch",
+      "full_name": "dimuthadithya/sliateBatch",
+      "description": "Created a website for SLIATE Kegalle batch mates to stay connected, share updates, and foster community. Built with HTML, CSS, Bootstrap, and JavaScript.",
+      "html_url": "https://github.com/dimuthadithya/sliateBatch",
+      "homepage": "https://dimuthadithya.github.io/sliateBatch/",
+      "topics": [
+        "boostrap",
+        "css",
+        "fontawesome",
+        "html",
+        "jquery",
+        "sass",
+        "project"
+      ],
+      "languages": {
+        "HTML": 26710,
+        "JavaScript": 21199,
+        "CSS": 10722,
+        "SCSS": 9155
+      },
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "watchers_count": 0,
+      "open_issues_count": 0,
+      "size": 29889,
+      "default_branch": "master",
+      "created_at": "2024-08-05T07:34:37Z",
+      "updated_at": "2026-04-05T12:22:27Z",
+      "pushed_at": "2025-08-26T10:24:23Z",
+      "is_fork": false,
+      "archived": false,
+      "card_image": null,
+      "readme_images": []
+    },
+    {
       "id": 1189279730,
       "name": "dimuthadithya.site",
       "full_name": "dimuthadithya/dimuthadithya.site",
@@ -48,18 +84,18 @@
         "tailwindcss"
       ],
       "languages": {
-        "JavaScript": 222822,
+        "JavaScript": 222924,
         "CSS": 4802
       },
       "stargazers_count": 0,
       "forks_count": 0,
       "watchers_count": 0,
       "open_issues_count": 0,
-      "size": 20463,
+      "size": 20522,
       "default_branch": "main",
       "created_at": "2026-03-23T06:47:06Z",
-      "updated_at": "2026-04-03T02:57:08Z",
-      "pushed_at": "2026-04-03T02:57:03Z",
+      "updated_at": "2026-04-05T03:24:37Z",
+      "pushed_at": "2026-04-05T03:24:34Z",
       "is_fork": false,
       "archived": false,
       "card_image": "https://vercel.com/button",
@@ -133,42 +169,6 @@
       "created_at": "2025-10-22T10:48:41Z",
       "updated_at": "2026-02-15T11:18:28Z",
       "pushed_at": "2026-02-02T07:53:23Z",
-      "is_fork": false,
-      "archived": false,
-      "card_image": null,
-      "readme_images": []
-    },
-    {
-      "id": 838218480,
-      "name": "sliateBatch",
-      "full_name": "dimuthadithya/sliateBatch",
-      "description": "Created a website for SLIATE Kegalle batch mates to stay connected, share updates, and foster community. Built with HTML, CSS, Bootstrap, and JavaScript.",
-      "html_url": "https://github.com/dimuthadithya/sliateBatch",
-      "homepage": "https://dimuthadithya.github.io/sliateBatch/",
-      "topics": [
-        "boostrap",
-        "css",
-        "fontawesome",
-        "html",
-        "jquery",
-        "sass",
-        "project"
-      ],
-      "languages": {
-        "HTML": 26710,
-        "JavaScript": 21199,
-        "CSS": 10722,
-        "SCSS": 9155
-      },
-      "stargazers_count": 1,
-      "forks_count": 0,
-      "watchers_count": 1,
-      "open_issues_count": 0,
-      "size": 29889,
-      "default_branch": "master",
-      "created_at": "2024-08-05T07:34:37Z",
-      "updated_at": "2025-08-26T10:24:26Z",
-      "pushed_at": "2025-08-26T10:24:23Z",
       "is_fork": false,
       "archived": false,
       "card_image": null,
@@ -844,11 +844,11 @@
   ],
   "stats": {
     "total_repos": 21,
-    "total_stars": 4,
+    "total_stars": 3,
     "total_forks": 4,
     "public_repos": 33,
     "followers": 61,
     "following": 109,
-    "updated_at": "2026-04-04T02:47:33.718Z"
+    "updated_at": "2026-04-06T03:27:35.206Z"
   }
 }
