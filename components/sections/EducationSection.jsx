@@ -20,9 +20,8 @@ const HND_SEMESTERS = [
     ],
   },
   {
-    //check and change later other sememestre verified 
     sem: 2,
-    gpa: 3.6,
+    gpa: 3.62,
     subjects: [
       'Fundamentals of Programming',
       'Software Development ',
