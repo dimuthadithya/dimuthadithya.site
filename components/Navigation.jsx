@@ -87,14 +87,17 @@ function Navigation() {
 
       {/* Desktop CTA */}
       <div className='hidden sm:block'>
-        <span className='flex items-center font-inconsolata hover:opacity-100 transition-opacity hover:text-red-600 duration-200 cursor-pointer'>
+        <a
+          href='#contact'
+          className='flex items-center font-inconsolata hover:opacity-100 transition-opacity hover:text-red-600 duration-200 cursor-pointer'
+        >
           <TextAnimate animation='scaleUp' by='text' delay={1}>
             <span>Let&apos;s Talk</span>
           </TextAnimate>
           <TextAnimate animation='scaleUp' by='text' delay={2}>
             <ArrowUpRightIcon />
           </TextAnimate>
-        </span>
+        </a>
       </div>
 
       {/* Mobile hamburger */}
